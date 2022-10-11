@@ -1,0 +1,26 @@
+version : "3"
+services:
+  jdecode-dev-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /var/www/html
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "1111:1111"
+    container_name: jdecode-dev-app
+    restart: always
+    networks:
+      jdecode-dev-app-network:
+        ipv4_address: 111.111.1.1
+
+# Local network for services running using this docker-compose config
+networks:
+  jdecode-dev-app-network:
+    ipam:
+      driver: default
+      config:
+        - subnet: 111.111.0.0/16
