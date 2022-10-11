@@ -6,5 +6,6 @@ export default defineConfig({
         host: "0.0.0.0",
         port: 1111,
     },
-    plugins: [vue()]
+    plugins: [vue()],
+    base: "./jdecode-dev/",
 })
