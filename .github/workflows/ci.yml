@@ -22,7 +22,7 @@ jobs:
       - run: npm ci
       - run: npm run build --if-present
       - run: mv dist docs
-      - run: echo 'jdecode.dev' > docs/CNAME
+      #- run: echo 'jdecode.dev' > docs/CNAME
       - run: git add docs
       - run: git config user.email "jdecode@gmail.com"
       - run: git config user.username "jdecode"
