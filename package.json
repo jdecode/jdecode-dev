@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vue/cli-plugin-router": "^5.0.8",
     "vue": "^3.2.40"
   },
   "devDependencies": {
