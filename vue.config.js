@@ -1,3 +1,1 @@
-module.exports = {
-    publicPath: '/jdecode-dev/'
-}
+module.exports = {}
