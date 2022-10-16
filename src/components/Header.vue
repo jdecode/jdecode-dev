@@ -44,7 +44,7 @@
     <p>
       <span class="text-orange-500">NOT</span> a full-stack developer
     </p>
-    <p class="text-2xl mt-5 italic grid grid-cols-3">
+    <p class="text-2xl mt-5 italic grid grid-cols-3 gap-y-4 mt-12">
       <span v-for="technology in technologies" :key="technology" class="even:text-orange-500">
         {{ technology }}
       </span>
