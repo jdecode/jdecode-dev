@@ -1,3 +1,17 @@
+<script setup>
+    const technologies = [
+      'laravel',
+      'postgres',
+      'tailwind',
+      'docker',
+      'vue',
+      'phpstorm',
+      'github',
+      'google-cloud',
+      'terraform'
+    ];
+
+</script>
 <template>
   <a href="/" class="hidden">
     <img src="/jdecode-dev.svg" class="logo w-24 h-24" alt="jdecode.dev" />
@@ -31,15 +45,9 @@
       <span class="text-orange-500">NOT</span> a full-stack developer
     </p>
     <p class="text-2xl mt-5 italic grid grid-cols-3">
-      <span>laravel</span>
-      <span class="text-orange-500">postgres</span>
-      <span>googlecloud</span>
-      <span class="text-orange-500">vue</span>
-      <span>tailwind</span>
-      <span class="text-orange-500">docker</span>
-      <span>github</span>
-      <span class="text-orange-500">phpstorm</span>
-      <span>terraform</span>
+      <span v-for="technology in technologies" :key="technology" class="even:text-orange-500">
+        {{ technology }}
+      </span>
     </p>
   </div>
 </template>
