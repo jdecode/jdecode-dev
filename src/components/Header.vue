@@ -30,8 +30,16 @@
     <p>
       <span class="text-orange-500">NOT</span> a full-stack developer
     </p>
-    <p class="text-2xl mt-5 italic">
-      laravel postgres googlecloud vue tailwind docker github phpstorm terraform heroku
+    <p class="text-2xl mt-5 italic grid grid-cols-3">
+      <span>laravel</span>
+      <span class="text-orange-500">postgres</span>
+      <span>googlecloud</span>
+      <span class="text-orange-500">vue</span>
+      <span>tailwind</span>
+      <span class="text-orange-500">docker</span>
+      <span>github</span>
+      <span class="text-orange-500">phpstorm</span>
+      <span>terraform</span>
     </p>
   </div>
 </template>
