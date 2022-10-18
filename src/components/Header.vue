@@ -36,7 +36,7 @@
   </div>
   <div class="pt-10 mt-5 text-4xl flex flex-col justify-center text-center gap-5">
     <p>
-      <span class="text-orange-500">PHP</span> developer since <span class="text-orange-500">2006</span>
+      <span class="text-orange-500">PHP</span> programmer since <span class="text-orange-500">2006</span>
     </p>
     <p>
       Creating websites in <span class="text-orange-500">Javascript since 2002</span>
