@@ -2,9 +2,9 @@
     const technologies = [
       'laravel',
       'postgres',
-      'tailwind',
+      'tailwind-css',
       'docker',
-      'vue',
+      'alpine-js',
       'phpstorm',
       'github',
       'google-cloud',
