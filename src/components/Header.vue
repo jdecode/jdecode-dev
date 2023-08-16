@@ -41,8 +41,8 @@
     <p>
       Creating websites in <span class="text-orange-500">Javascript since 2002</span>
     </p>
-    <p>
-      <span class="text-orange-500">NOT</span> a full-stack developer
+    <p title="July 2023 : Changing my view on me being a 'full-stack'">
+      <span class="text-orange-500 line-through">NOT</span> <span class="text-orange-500 italic">May be</span> a full-stack developer
     </p>
     <p class="text-2xl mt-5 italic grid grid-cols-3 gap-y-4 mt-12">
       <span v-for="technology in technologies" :key="technology" class="even:text-orange-500">
