@@ -8,7 +8,10 @@
       'phpstorm',
       'github',
       'google-cloud',
-      'terraform'
+      'flux-pro',
+      'livewire',
+      'copilot',
+      'windsurf'
     ];
 
 </script>
