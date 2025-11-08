@@ -19,5 +19,16 @@
       </a>
     </div>
   </div>
+  <div class="my-10 flex items-center gap-x-4">
+    <div>
+      <a
+          href="https://blog.jdecode.dev"
+          title="[new tab]"
+          class="text-gray-400"
+          target="_blank">
+        blog.jdecode.dev
+      </a>
+    </div>
+  </div>
 </template>
 
