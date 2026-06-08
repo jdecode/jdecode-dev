@@ -6,12 +6,12 @@
       'docker',
       'alpine-js',
       'phpstorm',
-      'gemini',
+      'claude',
       'google-cloud',
       'flux-pro',
       'livewire',
       'laravel-cloud',
-      'anti-gravity'
+      'antigravity'
     ];
 
 </script>
