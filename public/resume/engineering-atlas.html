@@ -1,0 +1,838 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+        name="description"
+        content="Jagdeep Singh Kalsi — Solution Architect and PHP/Laravel platform engineer."
+    >
+    <title>Jagdeep Singh Kalsi — Engineering Atlas</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        paper: "#f6f1e8",
+                        ink: "#172033",
+                        muted: "#5e6979",
+                        line: "#d9d1c3",
+                        teal: "#0f766e",
+                        amber: "#c65a12",
+                        blue: "#1d4ed8",
+                        mist: "#e8f0ef",
+                        sand: "#f8e7d2",
+                    },
+                    fontFamily: {
+                        display: ["DM Sans", "sans-serif"],
+                        mono: ["IBM Plex Mono", "monospace"],
+                    },
+                },
+            },
+        };
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            overflow-x: hidden;
+        }
+
+        .mono {
+            font-family: "IBM Plex Mono", monospace;
+        }
+
+        /*
+         * The commit-category layout is intentionally mobile-first:
+         * - narrow screens: flexible label + compact chart + compact metric
+         * - sm and larger: comfortable fixed minimums for editorial alignment
+         */
+        .skill-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(64px, 2fr) 3rem;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-row > * {
+            min-width: 0;
+        }
+
+        @media (min-width: 640px) {
+            .skill-row {
+                grid-template-columns: minmax(130px, 1.1fr) minmax(120px, 2fr) 80px;
+                gap: 1rem;
+            }
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 12mm;
+            }
+
+            body {
+                background: white !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            section,
+            article,
+            .avoid-break {
+                break-inside: avoid;
+            }
+
+            a {
+                color: inherit !important;
+                text-decoration: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-paper text-ink antialiased">
+    <a
+        href="#main-content"
+        class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-ink focus:px-4 focus:py-2 focus:text-white"
+    >
+        Skip to content
+    </a>
+
+    <header class="border-b-4 border-ink">
+        <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 sm:px-8 lg:px-10">
+            <a href="#" class="flex min-w-0 items-center gap-3" aria-label="Jagdeep Singh Kalsi home">
+                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-ink text-sm font-bold text-paper">
+                    JK
+                </span>
+                <span class="mono truncate text-xs font-medium uppercase tracking-[0.16em] text-muted">
+                    Engineering Atlas / 2026
+                </span>
+            </a>
+
+            <nav class="no-print hidden items-center gap-5 text-sm font-semibold sm:flex" aria-label="Page sections">
+                <a href="#evidence" class="transition hover:text-amber">Evidence</a>
+                <a href="#case-files" class="transition hover:text-amber">Case files</a>
+                <a href="#career" class="transition hover:text-amber">Career context</a>
+                <a
+                    href="#contact"
+                    class="rounded-full bg-ink px-4 py-2 text-paper transition hover:bg-amber"
+                >
+                    Contact
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="border-b border-line">
+            <div class="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:px-8 md:py-16 lg:grid-cols-12 lg:px-10">
+                <div class="min-w-0 lg:col-span-8">
+                    <p class="mono mb-5 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-amber">
+                        <span class="h-px w-10 shrink-0 bg-amber"></span>
+                        <span>Solution Architect · PHP / Laravel · Platform Engineering</span>
+                    </p>
+
+                    <h1 class="max-w-4xl text-5xl font-semibold leading-[0.94] tracking-[-0.055em] text-ink sm:text-6xl md:text-7xl">
+                        Jagdeep Singh
+                        <span class="text-amber">Kalsi.</span>
+                    </h1>
+
+                    <p class="mt-7 max-w-3xl text-lg leading-relaxed text-muted sm:text-xl">
+                        A full-stack and platform engineer who turns product requirements into durable systems:
+                        <strong class="font-semibold text-ink">
+                            Laravel applications, delivery foundations, reliability practices,
+                            and team-scale engineering standards.
+                        </strong>
+                    </p>
+
+                    <div class="mt-8 flex flex-wrap gap-2">
+                        <span class="rounded-full border border-ink bg-ink px-3 py-1.5 text-sm font-medium text-paper">
+                            PHP / Laravel
+                        </span>
+                        <span class="rounded-full border border-ink px-3 py-1.5 text-sm font-medium">
+                            Full-stack delivery
+                        </span>
+                        <span class="rounded-full border border-ink px-3 py-1.5 text-sm font-medium">
+                            Platform stewardship
+                        </span>
+                        <span class="rounded-full border border-ink px-3 py-1.5 text-sm font-medium">
+                            Quality & delivery systems
+                        </span>
+                        <span class="rounded-full border border-ink px-3 py-1.5 text-sm font-medium">
+                            AI-assisted engineering
+                        </span>
+                    </div>
+                </div>
+
+                <aside class="border-l-0 border-line pt-1 lg:col-span-4 lg:border-l lg:pl-8" aria-label="Profile details">
+                    <p class="mono text-xs font-semibold uppercase tracking-[0.16em] text-muted">
+                        Available profile
+                    </p>
+
+                    <dl class="mt-5 space-y-5 text-sm">
+                        <div>
+                            <dt class="mono text-[11px] uppercase tracking-[0.15em] text-muted">
+                                Based in
+                            </dt>
+                            <dd class="mt-1 font-semibold">Mohali, Punjab, India · Full remote</dd>
+                        </div>
+
+                        <div>
+                            <dt class="mono text-[11px] uppercase tracking-[0.15em] text-muted">
+                                Primary focus
+                            </dt>
+                            <dd class="mt-1 font-semibold">
+                                Solution architecture, Laravel platforms, technical leadership
+                            </dd>
+                        </div>
+
+                        <div>
+                            <dt class="mono text-[11px] uppercase tracking-[0.15em] text-muted">
+                                Online
+                            </dt>
+                            <dd class="mt-1 flex min-w-0 flex-col gap-1">
+                                <a
+                                    class="break-all font-semibold text-teal underline decoration-teal/40 underline-offset-4 hover:text-amber"
+                                    href="https://jdecode.dev"
+                                >
+                                    jdecode.dev
+                                </a>
+                                <a
+                                    class="break-all font-semibold text-teal underline decoration-teal/40 underline-offset-4 hover:text-amber"
+                                    href="https://github.com/jdecode"
+                                >
+                                    github.com/jdecode
+                                </a>
+                                <a
+                                    class="break-all font-semibold text-teal underline decoration-teal/40 underline-offset-4 hover:text-amber"
+                                    href="https://linkedin.com/in/jdecode"
+                                >
+                                    linkedin.com/in/jdecode
+                                </a>
+                            </dd>
+                        </div>
+                    </dl>
+                </aside>
+            </div>
+        </section>
+
+        <section class="border-b-4 border-ink bg-ink text-paper" aria-labelledby="proof-title">
+            <div class="mx-auto max-w-7xl px-5 py-8 sm:px-8 lg:px-10">
+                <div class="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+                    <div>
+                        <p class="mono text-xs font-semibold uppercase tracking-[0.18em] text-[#f0bd81]">
+                            Evidence ledger
+                        </p>
+                        <h2 id="proof-title" class="mt-2 text-2xl font-semibold tracking-tight">
+                            Five years of GitHub-derived delivery evidence.
+                        </h2>
+                    </div>
+
+                    <p class="max-w-xl text-sm leading-relaxed text-slate-300">
+                        Author-attributed default-branch activity across
+                        <span class="font-semibold text-white">The Lightning Group</span>,
+                        <span class="font-semibold text-white">konnector-dev</span>,
+                        and <span class="font-semibold text-white">jdecode</span>,
+                        plus a client-org engagement reconstructed from local git history — July 2021 through July 2026.
+                    </p>
+                </div>
+
+                <div class="mt-8 grid border border-slate-700 sm:grid-cols-2 lg:grid-cols-4">
+                    <div class="border-b border-slate-700 p-5 sm:border-r lg:border-b-0">
+                        <p class="mono text-xs uppercase tracking-[0.15em] text-slate-400">Authored commits</p>
+                        <p class="mt-3 text-4xl font-semibold tracking-tight">7,326</p>
+                        <p class="mt-2 text-sm text-slate-400">Across the reviewed period</p>
+                    </div>
+
+                    <div class="border-b border-slate-700 p-5 lg:border-b-0 lg:border-r">
+                        <p class="mono text-xs uppercase tracking-[0.15em] text-slate-400">Repositories</p>
+                        <p class="mt-3 text-4xl font-semibold tracking-tight">74</p>
+                        <p class="mt-2 text-sm text-slate-400">Product, client, platform & personal work</p>
+                    </div>
+
+                    <div class="border-b border-slate-700 p-5 sm:border-r lg:border-b-0">
+                        <p class="mono text-xs uppercase tracking-[0.15em] text-slate-400">Ownership signals</p>
+                        <p class="mt-3 text-4xl font-semibold tracking-tight">828</p>
+                        <p class="mt-2 text-sm text-slate-400">Refactor, release, upgrade & high-impact work</p>
+                    </div>
+
+                    <div class="p-5">
+                        <p class="mono text-xs uppercase tracking-[0.15em] text-slate-400">Longest evidence trail</p>
+                        <p class="mt-3 text-4xl font-semibold tracking-tight">4.5 yrs</p>
+                        <p class="mt-2 text-sm text-slate-400">
+                            Sustained work on <span class="mono">Org Dashboard</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="evidence" class="border-b border-line">
+            <div class="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-10">
+                <div class="grid gap-8 lg:grid-cols-12">
+                    <div class="lg:col-span-4">
+                        <p class="mono text-xs font-semibold uppercase tracking-[0.18em] text-amber">
+                            01 / Work signature
+                        </p>
+                        <h2 class="mt-3 text-4xl font-semibold tracking-[-0.04em]">
+                            The shape of the work.
+                        </h2>
+                        <p class="mt-4 max-w-md leading-relaxed text-muted">
+                            The commit record shows a genuinely balanced full-stack profile, with particularly strong
+                            evidence in reliability engineering and delivery systems.
+                        </p>
+
+                        <div class="mt-7 border-l-4 border-teal bg-mist p-4">
+                            <p class="mono text-xs uppercase tracking-[0.14em] text-teal">
+                                Read this correctly
+                            </p>
+                            <p class="mt-2 text-sm leading-relaxed text-ink">
+                                Categories are keyword-classified from commit messages, so they indicate
+                                <strong>breadth and sustained responsibility</strong> rather than time sheets.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="min-w-0 lg:col-span-8">
+                        <div class="overflow-hidden border border-ink">
+                            <div class="skill-row border-b border-line bg-white px-3 py-4 sm:px-6">
+                                <div>
+                                    <p class="font-semibold">Reliability & bug fixing</p>
+                                    <p class="mono mt-1 break-words text-[11px] text-muted">
+                                        tests · hardening · regressions
+                                    </p>
+                                </div>
+                                <div class="h-3 bg-[#eee7dd]">
+                                    <div class="h-full bg-teal" style="width: 100%"></div>
+                                </div>
+                                <p class="mono text-right text-sm font-semibold">1,382</p>
+                            </div>
+
+                            <div class="skill-row border-b border-line px-3 py-4 sm:px-6">
+                                <div>
+                                    <p class="font-semibold">DevOps & delivery</p>
+                                    <p class="mono mt-1 break-words text-[11px] text-muted">
+                                        Docker · CI/CD · upgrades
+                                    </p>
+                                </div>
+                                <div class="h-3 bg-[#eee7dd]">
+                                    <div class="h-full bg-blue" style="width: 91.5%"></div>
+                                </div>
+                                <p class="mono text-right text-sm font-semibold">1,264</p>
+                            </div>
+
+                            <div class="skill-row border-b border-line bg-white px-3 py-4 sm:px-6">
+                                <div>
+                                    <p class="font-semibold">Backend</p>
+                                    <p class="mono mt-1 break-words text-[11px] text-muted">
+                                        Laravel · APIs · workflows
+                                    </p>
+                                </div>
+                                <div class="h-3 bg-[#eee7dd]">
+                                    <div class="h-full bg-amber" style="width: 72%"></div>
+                                </div>
+                                <p class="mono text-right text-sm font-semibold">995</p>
+                            </div>
+
+                            <div class="skill-row border-b border-line px-3 py-4 sm:px-6">
+                                <div>
+                                    <p class="font-semibold">Frontend</p>
+                                    <p class="mono mt-1 break-words text-[11px] text-muted">
+                                        Blade · Livewire · Vue
+                                    </p>
+                                </div>
+                                <div class="h-3 bg-[#eee7dd]">
+                                    <div class="h-full bg-amber" style="width: 71.1%"></div>
+                                </div>
+                                <p class="mono text-right text-sm font-semibold">983</p>
+                            </div>
+
+                            <div class="skill-row bg-white px-3 py-4 sm:px-6">
+                                <div>
+                                    <p class="font-semibold">Architecture & refactor</p>
+                                    <p class="mono mt-1 break-words text-[11px] text-muted">
+                                        modernization · structure
+                                    </p>
+                                </div>
+                                <div class="h-3 bg-[#eee7dd]">
+                                    <div class="h-full bg-ink" style="width: 18.1%"></div>
+                                </div>
+                                <p class="mono text-right text-sm font-semibold">250</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 grid gap-3 sm:grid-cols-3">
+                            <div class="border-t-4 border-amber bg-sand p-4">
+                                <p class="mono text-[11px] font-semibold uppercase tracking-[0.15em] text-amber">
+                                    Build
+                                </p>
+                                <p class="mt-2 text-sm font-semibold">
+                                    Laravel features, APIs, identity flows, data workflows
+                                </p>
+                            </div>
+
+                            <div class="border-t-4 border-teal bg-mist p-4">
+                                <p class="mono text-[11px] font-semibold uppercase tracking-[0.15em] text-teal">
+                                    Steady
+                                </p>
+                                <p class="mt-2 text-sm font-semibold">
+                                    Pest, Sentry, Telescope, remediation and upgrades
+                                </p>
+                            </div>
+
+                            <div class="border-t-4 border-blue bg-[#eaf0ff] p-4">
+                                <p class="mono text-[11px] font-semibold uppercase tracking-[0.15em] text-blue">
+                                    Scale
+                                </p>
+                                <p class="mt-2 text-sm font-semibold">
+                                    Docker, Vite, reusable boilerplate and delivery workflows
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="case-files" class="border-b border-line bg-white">
+            <div class="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-10">
+                <div class="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+                    <div>
+                        <p class="mono text-xs font-semibold uppercase tracking-[0.18em] text-amber">
+                            02 / Case files
+                        </p>
+                        <h2 class="mt-3 text-4xl font-semibold tracking-[-0.04em]">
+                            Not a list of tools — a record of systems.
+                        </h2>
+                    </div>
+
+                    <p class="max-w-xl text-sm leading-relaxed text-muted">
+                        Selected work combines sustained GitHub evidence with candidate-provided project and career context.
+                    </p>
+                </div>
+
+                <div class="mt-9 grid gap-5 lg:grid-cols-12">
+                    <article class="avoid-break min-w-0 border-2 border-ink p-6 lg:col-span-12">
+                        <div class="flex flex-wrap items-start justify-between gap-3">
+                            <div class="min-w-0">
+                                <p class="mono text-xs font-semibold uppercase tracking-[0.16em] text-amber">
+                                    Recent platform engagement / 2024–2026
+                                </p>
+                                <h3 class="mt-2 text-3xl font-semibold tracking-[-0.035em]">
+                                    UK multi-brand e-commerce / marketplace platform
+                                </h3>
+                            </div>
+                            <span class="mono rounded-full bg-ink px-3 py-1 text-xs text-paper">
+                                The Lightning Group
+                            </span>
+                        </div>
+
+                        <p class="mt-5 max-w-3xl text-lg leading-relaxed text-muted">
+                            Senior full-stack / platform engineer and de-facto release-integration owner across four
+                            Laravel services — a product-information platform, an order-management system, a
+                            standalone inventory-management service, and a shared platform API.
+                        </p>
+
+                        <div class="mt-6 grid gap-4 border-y border-line py-5 sm:grid-cols-3">
+                            <div>
+                                <p class="mono text-xs uppercase tracking-[0.12em] text-muted">Evidence</p>
+                                <p class="mt-1 text-2xl font-semibold">~835</p>
+                                <p class="text-sm text-muted">authored commits · 4 repositories</p>
+                            </div>
+                            <div>
+                                <p class="mono text-xs uppercase tracking-[0.12em] text-muted">Integration</p>
+                                <p class="mt-1 text-2xl font-semibold">107</p>
+                                <p class="text-sm text-muted">pull requests merged, many to prod</p>
+                            </div>
+                            <div>
+                                <p class="mono text-xs uppercase tracking-[0.12em] text-muted">Operating span</p>
+                                <p class="mt-1 text-2xl font-semibold">~18 mo</p>
+                                <p class="text-sm text-muted">Oct 2024–Apr 2026</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 grid gap-5 sm:grid-cols-2">
+                            <div>
+                                <p class="font-semibold">Systems &amp; ownership</p>
+                                <ul class="mt-2 space-y-2 text-sm leading-relaxed text-muted">
+                                    <li>Sole architect of the PIM (Product Information Management) platform end-to-end — schema, queued pipelines, AI layer, Livewire 3 / Flux UI, and GCP release.</li>
+                                    <li>Senior engineer and release-integration owner on the OMS (Order Management System); drove marketplace onboarding and a product-taxonomy subsystem.</li>
+                                    <li>Forked the IMS (Inventory Management System) into a standalone, production-deployed GCP service; DevOps owner for the shared platform API.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Platform &amp; delivery</p>
+                                <ul class="mt-2 space-y-2 text-sm leading-relaxed text-muted">
+                                    <li>Owned the Azure → GCP migration and containerization of three apps (Cloud Build, Compute Engine, Secret Manager, Pub/Sub).</li>
+                                    <li>Structured-LLM enrichment on the Prism abstraction across three Gemini generations via Vertex AI, with batched parallel validation jobs.</li>
+                                    <li>Hand-rolled Amazon SP-API client plus 10+ marketplace / retailer integrations (Amazon, Mirakl, Shopify, TikTok, Tesco …); introduced Cypress E2E in GitHub Actions CI and migrated PHPUnit → Pest.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="avoid-break min-w-0 border-2 border-ink p-6 lg:col-span-7">
+                        <div class="flex flex-wrap items-start justify-between gap-3">
+                            <div class="min-w-0">
+                                <p class="mono text-xs font-semibold uppercase tracking-[0.16em] text-amber">
+                                    Flagship system / 2021–2026
+                                </p>
+                                <h3 class="mt-2 text-3xl font-semibold tracking-[-0.035em]">
+                                    Organisation dashboard platform
+                                </h3>
+                            </div>
+                            <span class="mono rounded-full bg-ink px-3 py-1 text-xs text-paper">
+                                Org Dashboard
+                            </span>
+                        </div>
+
+                        <p class="mt-5 max-w-3xl text-lg leading-relaxed text-muted">
+                            Multi-year stewardship of a long-lived Laravel application: feature delivery, frontend assets,
+                            backend workflows, containerized development, framework/runtime upgrades, and ongoing maintenance.
+                        </p>
+
+                        <div class="mt-6 grid gap-4 border-y border-line py-5 sm:grid-cols-3">
+                            <div>
+                                <p class="mono text-xs uppercase tracking-[0.12em] text-muted">Evidence</p>
+                                <p class="mt-1 text-2xl font-semibold">2,486</p>
+                                <p class="text-sm text-muted">authored commits</p>
+                            </div>
+                            <div>
+                                <p class="mono text-xs uppercase tracking-[0.12em] text-muted">Code movement</p>
+                                <p class="mt-1 text-2xl font-semibold">331k+</p>
+                                <p class="text-sm text-muted">lines added</p>
+                            </div>
+                            <div>
+                                <p class="mono text-xs uppercase tracking-[0.12em] text-muted">Operating span</p>
+                                <p class="mt-1 text-2xl font-semibold">4.5 yrs</p>
+                                <p class="text-sm text-muted">Sep 2021–Mar 2026</p>
+                            </div>
+                        </div>
+
+                        <ul class="mt-5 grid gap-2 text-sm leading-relaxed sm:grid-cols-2">
+                            <li class="border-l-2 border-amber pl-3">
+                                Migrated frontend build tooling from Laravel Mix to Vite.
+                            </li>
+                            <li class="border-l-2 border-amber pl-3">
+                                Supported Docker and Docker Compose development workflows.
+                            </li>
+                            <li class="border-l-2 border-amber pl-3">
+                                Maintained dependencies, PHP upgrades, and delivery readiness.
+                            </li>
+                            <li class="border-l-2 border-amber pl-3">
+                                Balanced user-facing work with long-term reliability maintenance.
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="avoid-break min-w-0 border border-ink bg-ink p-6 text-paper lg:col-span-5">
+                        <p class="mono text-xs font-semibold uppercase tracking-[0.16em] text-[#f0bd81]">
+                            Leverage system / 2023–2026
+                        </p>
+                        <h3 class="mt-2 text-3xl font-semibold tracking-[-0.035em]">
+                            Laravel boilerplate stewardship
+                        </h3>
+                        <p class="mt-4 leading-relaxed text-slate-300">
+                            A reusable Laravel foundation that concentrates delivery standards: dependencies, developer tooling,
+                            reliability practices, and production readiness.
+                        </p>
+
+                        <div class="mt-6 grid grid-cols-2 gap-3">
+                            <div class="border border-slate-700 p-4">
+                                <p class="mono text-xs text-slate-400">COMMITS</p>
+                                <p class="mt-1 text-3xl font-semibold">233</p>
+                            </div>
+                            <div class="border border-slate-700 p-4">
+                                <p class="mono text-xs text-slate-400">LIFECYCLE</p>
+                                <p class="mt-1 text-3xl font-semibold">3+ yrs</p>
+                            </div>
+                        </div>
+
+                        <p class="mono mt-6 break-words text-xs leading-relaxed text-slate-400">
+                            PHP · Laravel · Docker · Composer · testing / quality tooling · delivery conventions
+                        </p>
+                    </article>
+
+                    <article class="avoid-break min-w-0 border border-ink p-6 lg:col-span-5">
+                        <p class="mono text-xs font-semibold uppercase tracking-[0.16em] text-teal">
+                            Independent product studio / 2025–2026
+                        </p>
+                        <h3 class="mt-2 text-3xl font-semibold tracking-[-0.035em]">
+                            Self-shipped Laravel products
+                        </h3>
+
+                        <div class="mt-5 space-y-4">
+                            <div class="border-l-4 border-teal pl-4">
+                                <p class="font-semibold">Dieter</p>
+                                <p class="mt-1 text-sm leading-relaxed text-muted">
+                                    Rapid product build-out across UI, backend functionality, reliability work and iterative architecture.
+                                    <span class="mono font-semibold text-ink">340 commits</span> in roughly two months.
+                                </p>
+                            </div>
+
+                            <div class="border-l-4 border-blue pl-4">
+                                <p class="font-semibold">Diatrack & Watcher</p>
+                                <p class="mt-1 text-sm leading-relaxed text-muted">
+                                    Product delivery, hardening, frontend iteration, developer documentation, and AI-agent/skills structure.
+                                    <span class="mono font-semibold text-ink">553 combined commits</span>.
+                                </p>
+                            </div>
+
+                            <div class="border-l-4 border-amber pl-4">
+                                <p class="font-semibold">Blog, Kuoter, Altron & utilities</p>
+                                <p class="mt-1 text-sm leading-relaxed text-muted">
+                                    Publication workflows, interface work, Livewire component refactors, developer utilities and product experiments.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="avoid-break min-w-0 border border-ink bg-[#eaf0ff] p-6 lg:col-span-7">
+                        <p class="mono text-xs font-semibold uppercase tracking-[0.16em] text-blue">
+                            Integration & application delivery
+                        </p>
+                        <h3 class="mt-2 text-3xl font-semibold tracking-[-0.035em]">
+                            Identity, content, quality and modernization.
+                        </h3>
+
+                        <div class="mt-6 grid gap-5 sm:grid-cols-2">
+                            <div>
+                                <p class="font-semibold">Backend and content workflows</p>
+                                <ul class="mt-2 space-y-2 text-sm leading-relaxed text-muted">
+                                    <li>Publication states for draft, unlisted, and published content.</li>
+                                    <li>Hero-media backfill automation and WordPress import maintenance.</li>
+                                    <li>Laravel migrations, authenticated workflows, validation and APIs.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold">Engineering foundations</p>
+                                <ul class="mt-2 space-y-2 text-sm leading-relaxed text-muted">
+                                    <li>Socialite and GitHub-authentication work.</li>
+                                    <li>Pest and parallel-test setup, PHP Insights, Sentry and Telescope.</li>
+                                    <li>Laravel 11 cleanup and Livewire-to-anonymous-Blade refactoring.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="border-b border-line">
+            <div class="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-10">
+                <div class="grid gap-9 lg:grid-cols-12">
+                    <div class="lg:col-span-4">
+                        <p class="mono text-xs font-semibold uppercase tracking-[0.18em] text-amber">
+                            03 / Technical system
+                        </p>
+                        <h2 class="mt-3 text-4xl font-semibold tracking-[-0.04em]">
+                            A toolkit shaped by shipping.
+                        </h2>
+                        <p class="mt-4 leading-relaxed text-muted">
+                            The core remains Laravel and PHP, complemented by the frontend, quality, and delivery layers
+                            needed to own a production system rather than just one feature.
+                        </p>
+                    </div>
+
+                    <div class="grid gap-px overflow-hidden border border-ink bg-ink sm:grid-cols-2 lg:col-span-8">
+                        <div class="min-w-0 bg-paper p-5">
+                            <p class="mono text-xs font-semibold uppercase tracking-[0.15em] text-amber">
+                                Application core
+                            </p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="rounded border border-ink px-2.5 py-1 text-sm">PHP</span>
+                                <span class="rounded border border-ink px-2.5 py-1 text-sm">Laravel</span>
+                                <span class="rounded border border-ink px-2.5 py-1 text-sm">Eloquent</span>
+                                <span class="rounded border border-ink px-2.5 py-1 text-sm">REST APIs</span>
+                                <span class="rounded border border-ink px-2.5 py-1 text-sm">Migrations</span>
+                                <span class="rounded border border-ink px-2.5 py-1 text-sm">Seeders</span>
+                                <span class="rounded border border-ink px-2.5 py-1 text-sm">OAuth / Socialite</span>
+                            </div>
+                        </div>
+
+                        <div class="min-w-0 bg-white p-5">
+                            <p class="mono text-xs font-semibold uppercase tracking-[0.15em] text-teal">
+                                Frontend delivery
+                            </p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="rounded border border-ink px-2.5 py-1 text-sm">Blade</span>
+                                <span class="rounded border border-ink px-2.5 py-1 text-sm">Livewire</span>
+                                <span class="rounded border border-ink px-2.5 py-1 text-sm">Tailwind CSS</span>
+                                <span class="rounded border border-ink px-2.5 py-1 text-sm">Alpine.js</span>
+                                <span class="rounded border border-ink px-2.5 py-1 text-sm">Vue</span>
+                                <span class="rounded border border-ink px-2.5 py-1 text-sm">JavaScript</span>
+                                <span class="rounded border border-ink px-2.5 py-1 text-sm">TypeScript</span>
+                            </div>
+                        </div>
+
+                        <div class="min-w-0 bg-white p-5">
+                            <p class="mono text-xs font-semibold uppercase tracking-[0.15em] text-blue">
+                                Quality & reliability
+                            </p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="rounded border border-ink px-2.5 py-1 text-sm">Pest</span>
+                                <span class="rounded border border-ink px-2.5 py-1 text-sm">PHP Insights</span>
+                                <span class="rounded border border-ink px-2.5 py-1 text-sm">Sentry</span>
+                                <span class="rounded border border-ink px-2.5 py-1 text-sm">Laravel Telescope</span>
+                                <span class="rounded border border-ink px-2.5 py-1 text-sm">Regression remediation</span>
+                            </div>
+                        </div>
+
+                        <div class="min-w-0 bg-paper p-5">
+                            <p class="mono text-xs font-semibold uppercase tracking-[0.15em] text-amber">
+                                Delivery & developer experience
+                            </p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="rounded border border-ink px-2.5 py-1 text-sm">Docker</span>
+                                <span class="rounded border border-ink px-2.5 py-1 text-sm">Docker Compose</span>
+                                <span class="rounded border border-ink px-2.5 py-1 text-sm">Vite</span>
+                                <span class="rounded border border-ink px-2.5 py-1 text-sm">Composer</span>
+                                <span class="rounded border border-ink px-2.5 py-1 text-sm">CI/CD</span>
+                                <span class="rounded border border-ink px-2.5 py-1 text-sm">GitHub Actions</span>
+                                <span class="rounded border border-ink px-2.5 py-1 text-sm">AI-assisted workflows</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="career" class="border-b border-line bg-ink text-paper">
+            <div class="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-10">
+                <div class="grid gap-10 lg:grid-cols-12">
+                    <div class="lg:col-span-4">
+                        <p class="mono text-xs font-semibold uppercase tracking-[0.18em] text-[#f0bd81]">
+                            04 / Career context
+                        </p>
+                        <h2 class="mt-3 text-4xl font-semibold tracking-[-0.04em]">
+                            The experience behind the current system.
+                        </h2>
+                        <p class="mt-4 leading-relaxed text-slate-300">
+                            Career history below is candidate-provided context; GitHub commit evidence begins in the
+                            2021–2026 analysis window.
+                        </p>
+                    </div>
+
+                    <div class="min-w-0 lg:col-span-8">
+                        <div class="grid gap-px overflow-hidden border border-slate-700 bg-slate-700 md:grid-cols-2">
+                            <article class="min-w-0 bg-ink p-6">
+                                <p class="mono text-xs font-semibold uppercase tracking-[0.15em] text-teal">
+                                    Now / 2018–present
+                                </p>
+                                <h3 class="mt-3 text-2xl font-semibold">Solution Architect</h3>
+                                <p class="mt-1 text-sm text-slate-400">The Lightning Group</p>
+                                <p class="mt-4 text-sm leading-relaxed text-slate-300">
+                                    Platform engineering, internal tooling, delivery standards, product development and AI-assisted engineering enablement.
+                                </p>
+                            </article>
+
+                            <article class="min-w-0 bg-ink p-6">
+                                <p class="mono text-xs font-semibold uppercase tracking-[0.15em] text-[#f0bd81]">
+                                    2015–2017
+                                </p>
+                                <h3 class="mt-3 text-2xl font-semibold">Team Lead</h3>
+                                <p class="mt-1 text-sm text-slate-400">Trantor Inc.</p>
+                                <p class="mt-4 text-sm leading-relaxed text-slate-300">
+                                    Led modernization of a legacy CRM into the Yii framework and worked with a cross-functional Agile team.
+                                </p>
+                            </article>
+
+                            <article class="min-w-0 bg-ink p-6">
+                                <p class="mono text-xs font-semibold uppercase tracking-[0.15em] text-[#f0bd81]">
+                                    2009–2015
+                                </p>
+                                <h3 class="mt-3 text-2xl font-semibold">Tech Lead & Consultant</h3>
+                                <p class="mt-1 text-sm text-slate-400">Sympon · NetSolutions · JST Technologies</p>
+                                <p class="mt-4 text-sm leading-relaxed text-slate-300">
+                                    Project architecture, internal operational systems, delivery workflows and team leadership.
+                                </p>
+                            </article>
+
+                            <article class="min-w-0 bg-ink p-6">
+                                <p class="mono text-xs font-semibold uppercase tracking-[0.15em] text-teal">
+                                    2006–2009
+                                </p>
+                                <h3 class="mt-3 text-2xl font-semibold">Core PHP Developer</h3>
+                                <p class="mt-1 text-sm text-slate-400">Kayako</p>
+                                <p class="mt-4 text-sm leading-relaxed text-slate-300">
+                                    Core development work on Fusion and custom CMS development during the early PHP/LAMP era.
+                                </p>
+                            </article>
+                        </div>
+
+                        <div class="mt-5 grid gap-4 md:grid-cols-2">
+                            <div class="border-l-4 border-[#f0bd81] p-4">
+                                <p class="font-semibold">Security & enablement</p>
+                                <p class="mt-1 text-sm leading-relaxed text-slate-300">
+                                    Candidate-provided experience includes OWASP / NULL community involvement, secure-PHP education, and security-minded engineering practices.
+                                </p>
+                            </div>
+
+                            <div class="border-l-4 border-teal p-4">
+                                <p class="font-semibold">Learning posture</p>
+                                <p class="mt-1 text-sm leading-relaxed text-slate-300">
+                                    Long-running evolution from PHP/LAMP systems through modern Laravel platforms, quality automation, containerized delivery, and AI-augmented development.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-10">
+                <div class="grid gap-6 border-y-4 border-ink py-8 md:grid-cols-12 md:items-center">
+                    <div class="md:col-span-8">
+                        <p class="mono text-xs font-semibold uppercase tracking-[0.18em] text-amber">
+                            Next conversation
+                        </p>
+                        <h2 class="mt-2 text-3xl font-semibold tracking-[-0.04em]">
+                            Looking for a platform-minded engineer who still ships product?
+                        </h2>
+                    </div>
+
+                    <div class="flex flex-wrap gap-3 md:col-span-4 md:justify-end">
+                        <a
+                            href="https://jdecode.dev"
+                            class="rounded-full bg-ink px-5 py-3 text-sm font-semibold text-paper transition hover:bg-amber"
+                        >
+                            Visit jdecode.dev
+                        </a>
+                        <a
+                            href="https://github.com/jdecode"
+                            class="rounded-full border border-ink px-5 py-3 text-sm font-semibold transition hover:bg-ink hover:text-paper"
+                        >
+                            GitHub profile
+                        </a>
+                    </div>
+                </div>
+
+                <footer class="mt-7 flex flex-col justify-between gap-3 text-xs text-muted md:flex-row">
+                    <p>Jagdeep Singh Kalsi · Solution Architect · Mohali, India</p>
+                    <p class="mono">GitHub evidence window: 2021-07-19 → 2026-07-19</p>
+                </footer>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

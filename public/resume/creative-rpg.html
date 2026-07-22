@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jagdeep S. Kalsi | Character Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        rpg: {
+                            bg: '#0a0a12',
+                            panel: '#151522',
+                            border: '#3b3b58',
+                            health: '#ff3366',
+                            mana: '#00e5ff',
+                            stamina: '#00ff66',
+                            epic: '#b300ff',
+                            gold: '#ffcc00'
+                        }
+                    },
+                    fontFamily: {
+                        pixel: ['"Press Start 2P"', 'monospace'],
+                        scifi: ['"Chakra Petch"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'neon-blue': '0 0 10px #00e5ff, inset 0 0 10px #00e5ff',
+                        'neon-purple': '0 0 10px #b300ff, inset 0 0 10px #b300ff',
+                        'neon-green': '0 0 10px #00ff66, inset 0 0 10px #00ff66',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Chakra+Petch:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0a0a12;
+            color: #e0e0e0;
+            background-image: 
+                linear-gradient(rgba(0, 229, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 229, 255, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            overflow-x: hidden;
+        }
+
+        /* Cyber-RPG Panel styling */
+        .rpg-panel {
+            background: rgba(21, 21, 34, 0.85);
+            border: 2px solid #3b3b58;
+            position: relative;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+        
+        /* Sci-fi corners */
+        .rpg-panel::before, .rpg-panel::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-color: #00e5ff;
+            border-style: solid;
+            transition: all 0.3s ease;
+        }
+        .rpg-panel::before {
+            top: -2px; left: -2px;
+            border-width: 2px 0 0 2px;
+        }
+        .rpg-panel::after {
+            bottom: -2px; right: -2px;
+            border-width: 0 2px 2px 0;
+        }
+        
+        .rpg-panel:hover {
+            border-color: #00e5ff;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+        }
+
+        /* Glitch effect on hover for titles */
+        .glitch-hover:hover {
+            animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+            color: #ff3366;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0) }
+            20% { transform: translate(-2px, 2px) }
+            40% { transform: translate(-2px, -2px) }
+            60% { transform: translate(2px, 2px) }
+            80% { transform: translate(2px, -2px) }
+            100% { transform: translate(0) }
+        }
+
+        /* Stat Bars */
+        .stat-bar-container {
+            width: 100%;
+            height: 12px;
+            background: #0a0a12;
+            border: 1px solid #3b3b58;
+            margin-top: 5px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-bar {
+            height: 100%;
+            background: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 5px,
+                rgba(255,255,255,0.2) 5px,
+                rgba(255,255,255,0.2) 10px
+            );
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a12; }
+        ::-webkit-scrollbar-thumb { background: #00e5ff; border: 1px solid #0a0a12; }
+        ::-webkit-scrollbar-thumb:hover { background: #ff3366; }
+        
+        /* CRT Scanlines */
+        .scanlines {
+            position: fixed;
+            top: 0; left: 0; w: 100vw; height: 100vh;
+            background: linear-gradient(
+                to bottom,
+                rgba(255,255,255,0),
+                rgba(255,255,255,0) 50%,
+                rgba(0,0,0,0.1) 50%,
+                rgba(0,0,0,0.1)
+            );
+            background-size: 100% 4px;
+            pointer-events: none;
+            z-index: 50;
+        }
+    </style>
+</head>
+<body class="font-scifi min-h-screen py-8 px-4 md:px-8 selection:bg-rpg-mana selection:text-black relative">
+
+<div class="scanlines"></div>
+
+<div class="max-w-[1200px] mx-auto space-y-6 relative z-10">
+    
+    <!-- Top Bar: Player Info -->
+    <header class="rpg-panel p-6 flex flex-col md:flex-row gap-6 items-center md:items-start justify-between border-t-4 border-t-rpg-gold">
+        <div class="flex items-center gap-6">
+            <!-- Avatar Frame -->
+            <div class="w-24 h-24 bg-black border-2 border-rpg-gold rounded shadow-[0_0_15px_rgba(255,204,0,0.5)] flex items-center justify-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48cGF0aCBkPSJNMjAgMjBjNS41IDAgMTAtNC41IDEwLTEwUzI1LjUgMCAyMCAwIDEwIDQuNSAxMCAxMHM0LjUgMTAgMTAgMTB6bTAgNWMtNi43IDAtMjAgMy40LTIwIDEwdjVzMCA1IDUgNWgzMHM1IDAgNS01di01YzAtNi42LTEzLjMtMTAtMjAtMTB6IiBmaWxsPSIjZmZjYzAwIiBvcGFjaXR5PSIwLjMiLz48L3N2Zz4=')] bg-center bg-no-repeat bg-[length:60%]"></div>
+                <div class="text-xs font-pixel text-rpg-gold z-10 mt-14">LVL 20</div>
+            </div>
+            
+            <!-- Character details -->
+            <div>
+                <h1 class="font-pixel text-2xl md:text-3xl text-rpg-mana glitch-hover mb-2 leading-tight">JAGDEEP S. KALSI</h1>
+                <h2 class="text-xl font-bold text-rpg-gold tracking-widest uppercase mb-1">Class: Solution Architect</h2>
+                <p class="text-sm text-gray-400">Guild: The Lightning Group | Base: Remote-Native</p>
+                <div class="mt-3 flex gap-2">
+                    <span class="text-xs bg-rpg-border px-2 py-1 text-white uppercase tracking-wider">Trait: Secure-by-Design</span>
+                    <span class="text-xs bg-rpg-border px-2 py-1 text-white uppercase tracking-wider">Trait: Cloud-Native</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Global Stats -->
+        <div class="w-full md:w-64 space-y-3">
+            <div>
+                <div class="flex justify-between text-xs font-pixel mb-1 text-rpg-health">
+                    <span>XP (YRS)</span>
+                    <span>20/20</span>
+                </div>
+                <div class="stat-bar-container"><div class="stat-bar bg-rpg-health w-full"></div></div>
+            </div>
+            <div>
+                <div class="flex justify-between text-xs font-pixel mb-1 text-rpg-mana">
+                    <span>COMMITS</span>
+                    <span>7326+</span>
+                </div>
+                <div class="stat-bar-container"><div class="stat-bar bg-rpg-mana w-[95%]"></div></div>
+            </div>
+            <div>
+                <div class="flex justify-between text-xs font-pixel mb-1 text-rpg-stamina">
+                    <span>REPOS</span>
+                    <span>74/74</span>
+                </div>
+                <div class="stat-bar-container"><div class="stat-bar bg-rpg-stamina w-full"></div></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- Left Sidebar: Attributes & Skill Tree -->
+        <div class="lg:col-span-4 space-y-6">
+            
+            <!-- Attributes -->
+            <div class="rpg-panel p-5">
+                <h3 class="font-pixel text-sm text-white mb-4 border-b border-rpg-border pb-2 glitch-hover">> CORE_ATTRIBUTES</h3>
+                
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between text-sm font-bold text-gray-300">
+                            <span>INT (Backend/Arch)</span>
+                            <span class="text-rpg-mana">Lvl 99</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-1">PHP 8.4, Laravel 12, PostgreSQL</p>
+                        <div class="stat-bar-container h-2"><div class="stat-bar bg-rpg-mana w-[99%]"></div></div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between text-sm font-bold text-gray-300">
+                            <span>AGI (DevOps/Cloud)</span>
+                            <span class="text-rpg-stamina">Lvl 95</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-1">GCP, Docker, CI/CD, Horizon</p>
+                        <div class="stat-bar-container h-2"><div class="stat-bar bg-rpg-stamina w-[95%]"></div></div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between text-sm font-bold text-gray-300">
+                            <span>STR (Reliability)</span>
+                            <span class="text-rpg-health">Lvl 92</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-1">Pest, Cypress, 1.3K+ Fixes</p>
+                        <div class="stat-bar-container h-2"><div class="stat-bar bg-rpg-health w-[92%]"></div></div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between text-sm font-bold text-gray-300">
+                            <span>CHA (Frontend)</span>
+                            <span class="text-rpg-epic">Lvl 88</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-1">Livewire 3, Vue, Tailwind CSS</p>
+                        <div class="stat-bar-container h-2"><div class="stat-bar bg-rpg-epic w-[88%]"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Active Buffs (AI) -->
+            <div class="rpg-panel p-5 border-l-4 border-l-rpg-epic">
+                <h3 class="font-pixel text-sm text-rpg-epic mb-4 border-b border-rpg-border pb-2">> ACTIVE_BUFFS (AI)</h3>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex items-start gap-3">
+                        <div class="mt-1 w-4 h-4 bg-rpg-epic shadow-neon-purple rounded-sm flex-shrink-0"></div>
+                        <div>
+                            <strong class="text-white block">Prism Pipeline</strong>
+                            <span class="text-gray-400 text-xs">Structured LLM outputs via Gemini 2.5/3 Pro.</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <div class="mt-1 w-4 h-4 bg-rpg-epic shadow-neon-purple rounded-sm flex-shrink-0"></div>
+                        <div>
+                            <strong class="text-white block">AI-Assisted Dev</strong>
+                            <span class="text-gray-400 text-xs">Multiplier to team velocity via Copilot/Claude Code.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Faction / Community -->
+            <div class="rpg-panel p-5">
+                <h3 class="font-pixel text-sm text-white mb-4 border-b border-rpg-border pb-2">> FACTION_STANDINGS</h3>
+                <div class="space-y-2 text-sm text-gray-300">
+                    <div class="flex justify-between items-center p-2 bg-rpg-bg border border-rpg-border">
+                        <span>OWASP / NULL Chapters</span>
+                        <span class="text-rpg-stamina font-bold">EXALTED</span>
+                    </div>
+                    <div class="flex justify-between items-center p-2 bg-rpg-bg border border-rpg-border">
+                        <span>CTA Secure Training</span>
+                        <span class="text-rpg-gold font-bold">HONORED</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Main Content: Quests & Inventory -->
+        <div class="lg:col-span-8 space-y-6">
+            
+            <!-- Quest Log (Experience) -->
+            <div class="rpg-panel p-6">
+                <div class="flex items-center justify-between border-b-2 border-rpg-mana pb-3 mb-6">
+                    <h3 class="font-pixel text-lg text-rpg-mana glitch-hover">QUEST_LOG: CAMPAIGNS</h3>
+                    <span class="text-xs text-gray-400 font-pixel">SORT: CHRONO_DESC</span>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Quest 1 -->
+                    <div class="relative pl-6 border-l-2 border-rpg-mana">
+                        <div class="absolute w-3 h-3 bg-rpg-mana rounded-full -left-[7px] top-1 shadow-neon-blue"></div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold text-white uppercase">The Lightning Group</h4>
+                            <span class="font-pixel text-xs text-rpg-gold">2018-PRESENT</span>
+                        </div>
+                        <h5 class="text-rpg-mana font-bold text-sm mb-3">Role: Solution Architect</h5>
+                        <p class="text-sm text-gray-300 mb-3 leading-relaxed">
+                            Spearheaded internal development programs. Engineered highly customized Laravel/Next.js boilerplates enabling dev teams to deliver product value instantly. 
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
+                            <div class="bg-rpg-bg p-3 border border-rpg-border rounded">
+                                <span class="text-rpg-health text-xs font-bold block mb-1">Objective Completed:</span>
+                                <span class="text-xs text-gray-400">Architected & deployed scalable APIs on GCP Cloud Run. Migrated legacy apps from Azure/Heroku.</span>
+                            </div>
+                            <div class="bg-rpg-bg p-3 border border-rpg-border rounded">
+                                <span class="text-rpg-health text-xs font-bold block mb-1">Objective Completed:</span>
+                                <span class="text-xs text-gray-400">Led the enterprise transition to AI-assisted development across the entire engineering team.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quest 2 -->
+                    <div class="relative pl-6 border-l-2 border-rpg-border">
+                        <div class="absolute w-3 h-3 bg-rpg-border rounded-full -left-[7px] top-1"></div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold text-gray-300 uppercase">Trantor Inc.</h4>
+                            <span class="font-pixel text-xs text-gray-500">2015-2017</span>
+                        </div>
+                        <h5 class="text-gray-400 font-bold text-sm mb-2">Role: Team Lead</h5>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            Led the legacy system modernization of a decade-old US code enforcement CRM application to a modern framework (Yii), managing an Agile cross-functional team of 12.
+                        </p>
+                    </div>
+
+                    <!-- Quest 3 -->
+                    <div class="relative pl-6 border-l-2 border-rpg-border">
+                        <div class="absolute w-3 h-3 bg-rpg-border rounded-full -left-[7px] top-1"></div>
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold text-gray-300 uppercase">Earlier Campaigns</h4>
+                            <span class="font-pixel text-xs text-gray-500">2008-2015</span>
+                        </div>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            Progressed through the ranks from PHP Developer at Kayako Infotech (2008) to Tech/Team Lead roles at JST Technologies, NetSolutions, and Sympon, constantly leveling up in system design and leadership.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inventory: Epic Items (Projects) -->
+            <div class="rpg-panel p-6">
+                <div class="flex items-center justify-between border-b-2 border-rpg-epic pb-3 mb-6">
+                    <h3 class="font-pixel text-lg text-rpg-epic glitch-hover">INVENTORY: EPIC_BUILDS</h3>
+                    <span class="text-xs text-gray-400 font-pixel">ITEMS: 6</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Item 1 -->
+                    <div class="bg-rpg-bg border border-rpg-epic p-4 relative group hover:bg-rpg-epic/10 transition-colors">
+                        <div class="absolute top-0 right-0 bg-rpg-epic text-white font-pixel text-[10px] px-2 py-1">LEGENDARY</div>
+                        <h4 class="text-lg font-bold text-white mb-1 mt-2">Master Product Enrichment</h4>
+                        <p class="text-xs text-rpg-epic mb-2">Item Type: Platform Architecture</p>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            Laravel 12 multi-database platform. Ingests EANs, fetches SP-API data, validates via Gemini 2.5 (Prism). Sole architect (381 commits).
+                        </p>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="bg-rpg-bg border border-rpg-epic p-4 relative group hover:bg-rpg-epic/10 transition-colors">
+                        <div class="absolute top-0 right-0 bg-rpg-epic text-white font-pixel text-[10px] px-2 py-1">LEGENDARY</div>
+                        <h4 class="text-lg font-bold text-white mb-1 mt-2">Core Marketplace Monolith</h4>
+                        <p class="text-xs text-rpg-epic mb-2">Item Type: Release / System Engine</p>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            Integration owner on a ~9,000-commit monolith. Spearheaded Azure→GCP Cloud Run migration and AI-powered taxonomy categorization.
+                        </p>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="bg-rpg-bg border border-rpg-mana p-4 relative group hover:bg-rpg-mana/10 transition-colors">
+                        <div class="absolute top-0 right-0 bg-rpg-mana text-black font-pixel text-[10px] px-2 py-1">RARE</div>
+                        <h4 class="text-lg font-bold text-white mb-1 mt-2">Altron Ecosystem</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Central dashboard ecosystem to streamline SaaS apps & cloud deployments with built-in AI support.</p>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="bg-rpg-bg border border-rpg-mana p-4 relative group hover:bg-rpg-mana/10 transition-colors">
+                        <div class="absolute top-0 right-0 bg-rpg-mana text-black font-pixel text-[10px] px-2 py-1">RARE</div>
+                        <h4 class="text-lg font-bold text-white mb-1 mt-2">Diatrack App</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed">Specialized diet tracking application designed specifically to assist people managing diabetes.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

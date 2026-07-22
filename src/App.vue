@@ -1,13 +1,13 @@
 <script setup>
 import Footer from './components/Footer.vue'
 import Header from './components/Header.vue'
+import Resumes from './components/Resumes.vue'
 </script>
 
 <template>
-  <div class="mx-auto flex flex-col justify-start items-center h-full">
+  <main class="mx-auto flex flex-col justify-start items-center w-full">
     <Header></Header>
-  </div>
-  <div class="">
+    <Resumes></Resumes>
     <Footer></Footer>
-  </div>
+  </main>
 </template>
