@@ -140,6 +140,8 @@ h2.plate{font-family:"BigShoulders";font-weight:700;text-transform:uppercase;fon
 .dimmed .seg.r::after{left:0;border-right-color:var(--ink-soft);border-left-width:0}
 .dim .lab{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
 .dim .note{font-size:.68rem;color:var(--ink-soft);margin-top:3px}
+@media(max-width:600px){.dims{grid-template-columns:1fr 1fr;gap:22px 26px}}
+@media(max-width:360px){.dims{grid-template-columns:1fr}}
 
 section{padding:clamp(40px,7vw,86px) 0 0}
 .plate-head{display:flex;align-items:baseline;gap:16px;margin-bottom:26px;border-bottom:1.5px solid var(--line);padding-bottom:14px}
