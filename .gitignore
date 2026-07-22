@@ -3,4 +3,5 @@ node_modules
 vendor
 *.log
 .tmp
+olympus
 
