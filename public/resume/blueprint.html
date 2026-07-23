@@ -31,14 +31,14 @@
   --ink-soft:#38678B;
   --ink-faint:#6E93B2;
   --line:rgba(11,61,98,.55);
-  --grid:rgba(11,61,98,.10);
-  --grid-major:rgba(11,61,98,.20);
+  --grid:rgba(11,61,98,.06);
+  --grid-major:rgba(11,61,98,.12);
   --accent:#B23A22;             /* drafting revision red (AA on paper) */
   --accent-ink:#B23A22;
   --face-top:rgba(11,61,98,.05);
   --face-left:rgba(11,61,98,.11);
   --face-right:rgba(11,61,98,.18);
-  --panel:rgba(255,255,255,.42);
+  --panel:rgba(255,255,255,.82);
   --shadow:rgba(6,43,71,.10);
 }
 @media (prefers-color-scheme:dark){
@@ -50,32 +50,32 @@
     --ink-soft:#AFCFE6;
     --ink-faint:#7BA3C2;
     --line:rgba(224,240,251,.62);
-    --grid:rgba(210,232,247,.09);
-    --grid-major:rgba(210,232,247,.17);
+    --grid:rgba(210,232,247,.055);
+    --grid-major:rgba(210,232,247,.11);
     --accent:#FF8163;
     --accent-ink:#FF8163;
     --face-top:rgba(224,240,251,.10);
     --face-left:rgba(4,26,44,.30);
     --face-right:rgba(4,26,44,.52);
-    --panel:rgba(6,40,66,.45);
+    --panel:rgba(5,28,48,.75);
     --shadow:rgba(0,0,0,.28);
   }
 }
 :root[data-theme="light"]{
   --paper:#E7EEF3;--paper-2:#F2F6F9;--ink:#0B3D62;--ink-strong:#062B47;
   --ink-soft:#38678B;--ink-faint:#6E93B2;--line:rgba(11,61,98,.55);
-  --grid:rgba(11,61,98,.10);--grid-major:rgba(11,61,98,.20);
+  --grid:rgba(11,61,98,.06);--grid-major:rgba(11,61,98,.12);
   --accent:#B23A22;--accent-ink:#B23A22;
   --face-top:rgba(11,61,98,.05);--face-left:rgba(11,61,98,.11);--face-right:rgba(11,61,98,.18);
-  --panel:rgba(255,255,255,.42);--shadow:rgba(6,43,71,.10);
+  --panel:rgba(255,255,255,.82);--shadow:rgba(6,43,71,.10);
 }
 :root[data-theme="dark"]{
   --paper:#083152;--paper-2:#0A3A5F;--ink:#E7F2FB;--ink-strong:#FFFFFF;
   --ink-soft:#AFCFE6;--ink-faint:#7BA3C2;--line:rgba(224,240,251,.62);
-  --grid:rgba(210,232,247,.09);--grid-major:rgba(210,232,247,.17);
+  --grid:rgba(210,232,247,.055);--grid-major:rgba(210,232,247,.11);
   --accent:#FF8163;--accent-ink:#FF8163;
   --face-top:rgba(224,240,251,.10);--face-left:rgba(4,26,44,.30);--face-right:rgba(4,26,44,.52);
-  --panel:rgba(6,40,66,.45);--shadow:rgba(0,0,0,.28);
+  --panel:rgba(5,28,48,.75);--shadow:rgba(0,0,0,.28);
 }
 
 *{box-sizing:border-box}
@@ -145,7 +145,7 @@ h2.plate{font-family:"BigShoulders";font-weight:700;text-transform:uppercase;fon
 
 section{padding:clamp(40px,7vw,86px) 0 0}
 .plate-head{display:flex;align-items:baseline;gap:16px;margin-bottom:26px;border-bottom:1.5px solid var(--line);padding-bottom:14px}
-.plate-head .meta{margin-left:auto;text-align:right}
+.plate-head .meta{margin-left:auto;text-align:right;max-width:34ch;background:var(--panel);padding:8px 13px;color:var(--accent);line-height:1.45}
 @media(max-width:640px){.plate-head .meta{display:none}}
 
 .chart-wrap{position:relative;border:1.5px solid var(--line);background:var(--panel);padding:18px 18px 8px}
@@ -168,13 +168,13 @@ figcaption{font-size:.72rem;color:var(--ink-soft);margin-top:10px;letter-spacing
 
 .mat-bar{display:flex;width:100%;height:66px;border:1.5px solid var(--line);gap:2px;background:var(--line)}
 .mat-seg{position:relative;background:var(--paper-2);overflow:hidden}
-.mat-seg .pct{position:absolute;left:8px;top:6px;font-family:"BigShoulders";font-weight:800;font-size:1.05rem;color:var(--ink-strong);z-index:2}
-.mat-key{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px 22px;margin-top:22px}
+.mat-seg .pct{position:absolute;left:6px;top:6px;font-family:"BigShoulders";font-weight:800;font-size:1.02rem;color:var(--accent);background:var(--paper-2);padding:1px 5px;border-radius:3px;z-index:2}
+.mat-key{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px 22px;margin-top:20px;background:var(--panel);border:1px solid var(--line);padding:20px 22px}
 .mat-item{display:flex;gap:12px;align-items:flex-start}
 .mat-swatch{width:40px;height:40px;border:1.5px solid var(--line);flex:0 0 auto;background:var(--paper-2)}
 .mat-item .nm{font-weight:700;color:var(--ink-strong);font-size:.94rem}
 .mat-item .ds{font-size:.76rem;color:var(--ink-soft);line-height:1.4}
-.mat-item .pc{font-family:"BigShoulders";font-weight:800;font-size:1.05rem;margin-left:auto;color:var(--ink)}
+.mat-item .pc{font-family:"BigShoulders";font-weight:800;font-size:1.05rem;margin-left:auto;color:var(--accent)}
 
 .ga{display:grid;grid-template-columns:1.55fr 1fr;gap:26px;align-items:start}
 @media(max-width:880px){.ga{grid-template-columns:1fr}}
@@ -208,13 +208,13 @@ figcaption{font-size:.72rem;color:var(--ink-soft);margin-top:10px;letter-spacing
 .lg-dashm{width:18px;height:0;border-top:1.6px dashed var(--ink-soft)}
 
 .schedule{width:100%;border-collapse:collapse;font-size:.86rem}
-.schedule th,.schedule td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+.schedule th,.schedule td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top;background:var(--panel)}
 .schedule thead th{background:var(--panel);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);font-weight:700}
 .schedule td .rp{font-weight:700;color:var(--ink-strong)}
 .schedule td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
 .schedule .ref{font-family:"BigShoulders";font-weight:800;color:var(--accent);letter-spacing:.06em}
 .schedule tbody tr:hover{background:var(--panel)}
-.foot-note{font-size:.74rem;color:var(--ink-soft);margin-top:12px;padding-left:1.2em;text-indent:-1.2em}
+.foot-note{font-size:.74rem;color:var(--ink-soft);margin-top:10px;background:var(--panel);border-left:3px solid var(--accent);padding:8px 14px}
 
 .survey{border:1.5px solid var(--line);background:var(--panel);padding:26px 10px 12px;overflow-x:auto}
 .survey svg{display:block;min-width:760px;width:100%;height:auto}
@@ -227,7 +227,7 @@ figcaption{font-size:.72rem;color:var(--ink-soft);margin-top:10px;letter-spacing
 .survey .yr{fill:var(--ink-soft);font:600 10px "Archivo",sans-serif;letter-spacing:.06em}
 .survey .chain{fill:var(--ink-soft);font:700 10px "Archivo",sans-serif;letter-spacing:.14em}
 
-.spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border:1.5px solid var(--line)}
+.spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border:1.5px solid var(--line);background:var(--panel)}
 .spec-col{border-left:1px solid var(--line);padding:18px 20px}
 .spec-col:first-child{border-left:0}
 .spec-col h4{font-family:"BigShoulders";font-weight:800;text-transform:uppercase;font-size:1.05rem;margin:0 0 4px;color:var(--ink-strong);letter-spacing:.03em}
@@ -360,7 +360,7 @@ figcaption{font-size:.72rem;color:var(--ink-soft);margin-top:10px;letter-spacing
     <div class="plate-head">
       <span class="plate-no">Detail&nbsp;C</span>
       <h2 class="plate">The Marketplace Assembly</h2>
-      <div class="meta small">Multi-service commerce platform · client engagement · Oct 2024 – Apr 2026</div>
+      <div class="meta small">Multi-service commerce platform · client engagement · <span style="white-space:nowrap">Oct 2024 – Apr 2026</span></div>
     </div>
     <div class="ga">
       <div class="ga-canvas">
@@ -405,7 +405,7 @@ figcaption{font-size:.72rem;color:var(--ink-soft);margin-top:10px;letter-spacing
     <div class="plate-head">
       <span class="plate-no">Detail&nbsp;E</span>
       <h2 class="plate">Survey Elevation</h2>
-      <div class="meta small">Career long-section · Kayako Infotech 2008 → present</div>
+      <div class="meta small">Career long-section · 2008 → present</div>
     </div>
     <div class="survey">
       <svg id="career" role="img" viewBox="0 0 980 300"
@@ -713,7 +713,7 @@ figcaption{font-size:.72rem;color:var(--ink-soft);margin-top:10px;letter-spacing
     function X(y){return x0+(x1-x0)*((y-y0)/span);}
     svg.appendChild(el("line",{x1:x0,y1:gy,x2:x1,y2:gy,class:"ground"}));
     svg.appendChild(el("path",{d:"M"+x1+" "+gy+" l -10 -5 M"+x1+" "+gy+" l -10 5",class:"ground",fill:"none"}));
-    for(var yy=2008;yy<=2026;yy+=2){
+    for(var yy=2008;yy<=2024;yy+=2){
       svg.appendChild(el("line",{x1:X(yy),y1:gy-4,x2:X(yy),y2:gy+4,class:"tick"}));
       svg.appendChild(el("text",{x:X(yy),y:gy+22,"text-anchor":"middle",class:"yr"})).textContent=yy;
     }
@@ -730,7 +730,7 @@ figcaption{font-size:.72rem;color:var(--ink-soft);margin-top:10px;letter-spacing
       var anchor=(x> (x0+x1)*0.66)?"end":(x<(x0+x1)*0.2?"start":"middle");
       svg.appendChild(el("text",{x:x,y:ty-18,"text-anchor":anchor,class:"role"})).textContent=s.role;
       svg.appendChild(el("text",{x:x,y:ty-4,"text-anchor":anchor,class:"co"})).textContent=s.co+" · "+s.loc;
-      svg.appendChild(el("text",{x:x,y:ty+10,"text-anchor":anchor,class:"yr"})).textContent=(last?"2018 – present":"since "+s.y);
+      svg.appendChild(el("text",{x:x,y:ty+10,"text-anchor":anchor,class:"yr"})).textContent=(last?"2018 – present":""+s.y);
     });
   })();
 
