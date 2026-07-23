@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jagdeep Singh Kalsi | Terminal Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        retro: {
+                            bg: '#fdfbf7', // Warm off-white
+                            border: '#111827',
+                            primary: '#ff5a5f',
+                            secondary: '#00a699',
+                            accent: '#ffb400',
+                            blue: '#3b82f6'
+                        }
+                    },
+                    boxShadow: {
+                        'neobrutalism': '6px 6px 0px 0px rgba(17, 24, 39, 1)',
+                        'neobrutalism-sm': '4px 4px 0px 0px rgba(17, 24, 39, 1)',
+                    },
+                    fontFamily: {
+                        mono: ['"Space Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+                        sans: ['"Space Grotesk"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #fdfbf7;
+            background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+            background-size: 20px 20px;
+            color: #111827;
+        }
+        .neo-card {
+            background-color: #ffffff;
+            border: 3px solid #111827;
+            border-radius: 0px;
+            box-shadow: 6px 6px 0px 0px rgba(17, 24, 39, 1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .neo-card:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 4px 4px 0px 0px rgba(17, 24, 39, 1);
+        }
+        .neo-tag {
+            border: 2px solid #111827;
+            padding: 2px 8px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            box-shadow: 2px 2px 0px 0px rgba(17, 24, 39, 1);
+            background-color: #ffffff;
+        }
+        .neo-tag-primary { background-color: #ff5a5f; color: white; }
+        .neo-tag-secondary { background-color: #00a699; color: white; }
+        .neo-tag-accent { background-color: #ffb400; }
+        .neo-tag-blue { background-color: #3b82f6; color: white; }
+        
+        .marquee {
+            overflow: hidden;
+            white-space: nowrap;
+            border-top: 3px solid #111827;
+            border-bottom: 3px solid #111827;
+            background-color: #ffb400;
+            padding: 8px 0;
+        }
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 25s linear infinite;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
+</head>
+<body class="font-sans min-h-screen py-10 px-4 md:px-10">
+
+<div class="max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="neo-card bg-retro-accent mb-10 p-6 md:p-10 relative overflow-hidden">
+        <div class="absolute top-0 right-0 p-4 font-mono font-bold text-6xl text-black/10 select-none hidden md:block">EST. 2008</div>
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 relative z-10">
+            <div>
+                <div class="inline-block border-2 border-black bg-black text-white px-3 py-1 font-mono text-sm font-bold mb-4 uppercase shadow-neobrutalism-sm">
+                    SYS.STATUS: ONLINE // 20+ YRS UPTIME
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold uppercase tracking-tighter mb-2" style="line-height: 0.9;">
+                    Jagdeep S. <br/> Kalsi
+                </h1>
+                <h2 class="text-xl md:text-3xl font-mono font-bold mt-4 bg-white border-2 border-black inline-block px-3 py-1 shadow-neobrutalism-sm">
+                    > SOLUTION_ARCHITECT
+                </h2>
+            </div>
+            <div class="text-right border-l-4 border-black pl-4 bg-white/50 p-4">
+                <p class="font-mono font-bold text-lg border-b border-black pb-1 mb-1">EXP: 2008 - PRESENT</p>
+                <p class="font-mono text-sm font-semibold">THE LIGHTNING GROUP (2018+)</p>
+                <p class="font-mono text-sm">TRANTOR INC (2015-2017)</p>
+                <p class="font-mono text-sm">SYMPON / NETSOLUTIONS (2011-2015)</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tech Marquee -->
+    <div class="marquee mb-10">
+        <div class="marquee-content font-mono text-lg tracking-wider">
+            <span>
+                PHP 8.4 • LARAVEL CLOUD • GCP PUB/SUB • CLOUD BUILD • SECRET MANAGER • DOCKER • GEMINI 3 PRO • PRISM • POSTMAN CLI • VUE • TAILWIND • 
+                PHP 8.4 • LARAVEL CLOUD • GCP PUB/SUB • CLOUD BUILD • SECRET MANAGER • DOCKER • GEMINI 3 PRO • PRISM • POSTMAN CLI • VUE • TAILWIND • 
+            </span>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10">
+        
+        <!-- Left Sidebar -->
+        <div class="lg:col-span-4 space-y-8">
+            <div class="neo-card p-6 bg-white">
+                <h3 class="text-2xl font-bold uppercase tracking-tight border-b-4 border-black pb-2 mb-4">Core Infrastructure</h3>
+                <div class="space-y-5 font-mono text-sm">
+                    <div>
+                        <div class="font-bold mb-2">ARCH_&_CLOUD</div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="neo-tag neo-tag-secondary">GCP</span>
+                            <span class="neo-tag">Cloud Run</span>
+                            <span class="neo-tag">Pub/Sub</span>
+                            <span class="neo-tag">Docker</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="font-bold mb-2">BACKEND_ENG</div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="neo-tag neo-tag-primary">PHP / Laravel</span>
+                            <span class="neo-tag">PostgreSQL</span>
+                            <span class="neo-tag">Pest PHP</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="font-bold mb-2">DEVOPS_&_AI</div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="neo-tag neo-tag-blue">GitHub Actions</span>
+                            <span class="neo-tag">Claude/Copilot</span>
+                            <span class="neo-tag">Prism AI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GitHub Stats -->
+            <div class="neo-card p-6 bg-black text-white border-white">
+                <h3 class="text-xl font-bold uppercase mb-4 text-black border-2 border-black bg-retro-accent inline-block px-2 py-1 shadow-neobrutalism-sm">Commit History (2021-2026)</h3>
+                <div class="font-mono mb-4 text-3xl font-bold text-retro-accent border-b border-white/30 pb-2">7,326 COMMITS</div>
+                <ul class="space-y-2 font-mono text-sm">
+                    <li class="flex justify-between border-b border-white/20 pb-1"><span>Reliability</span> <span class="font-bold">21.3%</span></li>
+                    <li class="flex justify-between border-b border-white/20 pb-1"><span>DevOps</span> <span class="font-bold">19.5%</span></li>
+                    <li class="flex justify-between border-b border-white/20 pb-1"><span>Backend / Arch</span> <span class="font-bold">19.2%</span></li>
+                    <li class="flex justify-between pb-1"><span>Frontend</span> <span class="font-bold">15.1%</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="lg:col-span-8 space-y-8">
+            <h3 class="text-3xl font-bold uppercase tracking-tight border-b-4 border-black pb-2">Production Builds & Roles</h3>
+
+            <!-- Major Platform Build 1 -->
+            <div class="neo-card p-0 flex flex-col md:flex-row overflow-hidden border-b-8 border-r-8 border-retro-primary">
+                <div class="bg-retro-primary text-white p-6 md:w-1/3 flex flex-col border-b-3 md:border-b-0 md:border-r-3 border-black">
+                    <h4 class="text-xl font-bold uppercase mb-2">Platform Arch</h4>
+                    <p class="font-mono text-sm font-bold bg-black px-2 py-1 inline-block text-white self-start">Product Data Enrichment</p>
+                    <div class="mt-auto font-mono text-xs pt-4 border-t border-black/20 text-black font-bold">
+                        Laravel 12 • Gemini 2.5 • Prism • GCP
+                    </div>
+                </div>
+                <div class="p-6 md:w-2/3 bg-white">
+                    <p class="font-sans font-semibold mb-3 leading-relaxed">
+                        Architected an end-to-end multi-database platform ingesting EANs, fetching SP-API data, and applying LLM AI validation pipelines for taxonomy categorization.
+                    </p>
+                    <ul class="font-mono text-xs space-y-2 text-gray-800 bg-gray-100 p-3 border-2 border-dashed border-gray-400">
+                        <li>> Dockerized GCP pipeline with partitioned Horizon queues</li>
+                        <li>> Multi-source data unification (SP-API, UPC, Barcode)</li>
+                        <li>> Built complex front-end via Livewire 3 + Flux UI</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Major Platform Build 2 -->
+            <div class="neo-card p-0 flex flex-col md:flex-row overflow-hidden border-b-8 border-r-8 border-retro-secondary">
+                <div class="bg-retro-secondary text-white p-6 md:w-1/3 flex flex-col border-b-3 md:border-b-0 md:border-r-3 border-black">
+                    <h4 class="text-xl font-bold uppercase mb-2">Release Lead</h4>
+                    <p class="font-mono text-sm font-bold bg-black px-2 py-1 inline-block text-white self-start">Core Marketplace Monolith</p>
+                    <div class="mt-auto font-mono text-xs pt-4 border-t border-black/20 text-black font-bold">
+                        Azure→GCP • CI/CD • Cypress • Horizon
+                    </div>
+                </div>
+                <div class="p-6 md:w-2/3 bg-white">
+                    <p class="font-sans font-semibold mb-3 leading-relaxed">
+                        De-facto integration owner for a ~9,000-commit multi-team platform processing active order ingestions across 10+ major retailers (TikTok, Mirakl, Shopify).
+                    </p>
+                    <ul class="font-mono text-xs space-y-2 text-gray-800 bg-gray-100 p-3 border-2 border-dashed border-gray-400">
+                        <li>> Led Azure to GCP migration & full containerization</li>
+                        <li>> Introduced Cypress E2E automated testing in CI pipelines</li>
+                        <li>> Extracted Inventory subsystem into standalone GCP service</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Ecosystems Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+                <div class="neo-card p-5 bg-white">
+                    <h4 class="font-bold uppercase text-lg border-b-2 border-black mb-2">Personal Ecosystems</h4>
+                    <ul class="font-mono text-xs space-y-2">
+                        <li><span class="font-bold">> Altron:</span> Central SaaS dashboard with AI</li>
+                        <li><span class="font-bold">> Diatrack:</span> Specialized diabetes diet tracker</li>
+                        <li><span class="font-bold">> Watcher:</span> API-supported URL uptime checker</li>
+                        <li><span class="font-bold">> Scheduler:</span> Custom code-only meeting app</li>
+                    </ul>
+                </div>
+                <div class="neo-card p-5 bg-retro-blue text-white border-white">
+                    <h4 class="font-bold uppercase text-lg border-b-2 border-white mb-2">Community & InfoSec</h4>
+                    <p class="font-mono text-xs mb-2 leading-relaxed">
+                        Active contributor to Chandigarh OWASP & NULL chapters. Advocate for secure-by-design architectures.
+                    </p>
+                    <p class="font-mono text-xs leading-relaxed bg-black/20 p-2 border border-white/30">
+                        > Conducted secure development training for the Central Tibet Administration (CTA).
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

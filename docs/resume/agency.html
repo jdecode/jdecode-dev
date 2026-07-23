@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jagdeep Singh Kalsi | Resume Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+                    },
+                    colors: {
+                        gray: {
+                            900: '#111827',
+                            800: '#1f2937',
+                            700: '#374151',
+                            400: '#9ca3af',
+                            300: '#d1d5db',
+                            100: '#f3f4f6',
+                        },
+                        brand: {
+                            400: '#818cf8', // Indigo
+                            500: '#6366f1',
+                            accent: '#2dd4bf', // Teal
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0f111a; color: #e2e8f0; }
+        .card { background-color: #1a1d27; border: 1px solid #2d3142; border-radius: 0.5rem; }
+        .glass { background: rgba(26, 29, 39, 0.7); backdrop-filter: blur(10px); }
+        .stat-value { font-family: 'ui-monospace', monospace; }
+        
+        /* Custom scrollbar for timeline */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0f111a; }
+        ::-webkit-scrollbar-thumb { background: #374151; border-radius: 3px; }
+    </style>
+</head>
+<body class="antialiased min-h-screen p-6 md:p-12">
+    <div class="max-w-7xl mx-auto space-y-8">
+        
+        <!-- Header -->
+        <header class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b border-gray-800 pb-8">
+            <div>
+                <div class="flex items-center gap-3 mb-2">
+                    <span class="px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-brand-400 bg-brand-400/10 rounded-md border border-brand-400/20">Solution Architect</span>
+                    <span class="px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-brand-accent bg-brand-accent/10 rounded-md border border-brand-accent/20">20+ Years PHP/Laravel</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-white mb-3">Jagdeep Singh Kalsi</h1>
+                <p class="text-gray-400 max-w-3xl text-sm leading-relaxed">
+                    Over two decades of software engineering evolution—from hand-rolling early PHP5 monoliths to architecting scalable SaaS platforms on GCP. Proven track record leading cross-functional teams, enforcing strict CI/CD pipelines, and driving AI-assisted development across the Laravel ecosystem.
+                </p>
+            </div>
+            <div class="flex flex-wrap md:flex-col gap-3 text-sm font-mono text-gray-400 text-right">
+                <a href="#" class="hover:text-brand-400 transition-colors">jdecode.dev</a>
+                <a href="#" class="hover:text-brand-400 transition-colors">github.com/jdecode</a>
+                <span class="text-gray-500">Full-Remote / Mohali, IN</span>
+            </div>
+        </header>
+
+        <!-- Top Metrics -->
+        <section class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="card p-6 flex flex-col justify-between">
+                <span class="text-xs uppercase tracking-wider text-gray-500 font-semibold mb-2">Analyzed Commits</span>
+                <span class="stat-value text-4xl font-bold text-white">7,326</span>
+                <span class="text-xs text-gray-500 mt-2">Across 2021–2026</span>
+            </div>
+            <div class="card p-6 flex flex-col justify-between">
+                <span class="text-xs uppercase tracking-wider text-gray-500 font-semibold mb-2">Repositories</span>
+                <span class="stat-value text-4xl font-bold text-white">74</span>
+                <span class="text-xs text-gray-500 mt-2">personal, org &amp; client</span>
+            </div>
+            <div class="card p-6 flex flex-col justify-between">
+                <span class="text-xs uppercase tracking-wider text-gray-500 font-semibold mb-2">DevOps Commits</span>
+                <span class="stat-value text-4xl font-bold text-white">1,483</span>
+                <span class="text-xs text-gray-500 mt-2">Docker, CI/CD, GCP</span>
+            </div>
+            <div class="card p-6 flex flex-col justify-between">
+                <span class="text-xs uppercase tracking-wider text-gray-500 font-semibold mb-2">Core Tech Stack</span>
+                <div class="flex flex-wrap gap-2 mt-auto pt-4">
+                    <span class="px-2 py-0.5 text-xs bg-gray-800 rounded border border-gray-700 text-gray-300">Laravel 11</span>
+                    <span class="px-2 py-0.5 text-xs bg-gray-800 rounded border border-gray-700 text-gray-300">Pest</span>
+                    <span class="px-2 py-0.5 text-xs bg-gray-800 rounded border border-gray-700 text-gray-300">Docker</span>
+                    <span class="px-2 py-0.5 text-xs bg-gray-800 rounded border border-gray-700 text-gray-300">GCP</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Left Column: Timeline -->
+            <section class="lg:col-span-2 space-y-6">
+                <h2 class="text-xl font-bold border-b border-gray-800 pb-2">Career Evolution</h2>
+                
+                <div class="card p-6">
+                    <div class="relative border-l border-gray-700 ml-3 space-y-8">
+                        
+                        <!-- Timeline Item -->
+                        <div class="relative pl-6">
+                            <div class="absolute -left-1.5 top-1.5 w-3 h-3 bg-brand-400 rounded-full shadow-[0_0_10px_rgba(129,140,248,0.5)]"></div>
+                            <div class="flex justify-between items-baseline mb-1">
+                                <h3 class="font-bold text-white text-lg">Solution Architect <span class="text-gray-500 text-sm font-normal">| The Lightning Group</span></h3>
+                                <span class="text-xs font-mono text-brand-400">2018 - Present</span>
+                            </div>
+                            <p class="text-sm text-gray-400 mb-3">Architecting scalable platforms and spearheading internal tooling.</p>
+                            <ul class="list-disc list-inside text-sm text-gray-300 space-y-1.5 marker:text-gray-600">
+                                <li><strong>Marketplace Platform:</strong> Built a UK multi-brand e-commerce / marketplace platform across 4 Laravel services—PIM, OMS, IMS and Platform API—sole-authoring the PIM product-enrichment engine end-to-end (107 PRs merged, many straight to production).</li>
+                                <li><strong>Cloud & AI Enrichment:</strong> Owned the Azure → GCP migration and containerization of the stack, and built a structured-LLM enrichment pipeline on Prism + Gemini (via Vertex AI) feeding 10+ marketplace integrations incl. Amazon SP-API, Mirakl, Shopify and TikTok.</li>
+                                <li><strong>Platform Engineering:</strong> Engineered 1-click Laravel and Next.js boilerplates enforcing strict code quality (Pint, PHPInsights).</li>
+                                <li><strong>DevOps & Infra:</strong> Architected APIs on GCP Cloud Run. Automated testing via CircleCI & GitHub Actions with Postman CLI.</li>
+                                <li><strong>AI Integration:</strong> Championed transition to GitHub Copilot (2024) and Claude Code, acting as an internal AI enablement lead.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Timeline Item -->
+                        <div class="relative pl-6">
+                            <div class="absolute -left-1.5 top-1.5 w-3 h-3 bg-gray-600 rounded-full border-2 border-[#1a1d27]"></div>
+                            <div class="flex justify-between items-baseline mb-1">
+                                <h3 class="font-bold text-gray-200 text-lg">Team Lead <span class="text-gray-500 text-sm font-normal">| Trantor Inc.</span></h3>
+                                <span class="text-xs font-mono text-gray-500">2015 - 2017</span>
+                            </div>
+                            <p class="text-sm text-gray-400 mb-2">Led the modernization of a decade-old legacy CRM into the Yii framework.</p>
+                            <ul class="list-disc list-inside text-sm text-gray-300 space-y-1.5 marker:text-gray-600">
+                                <li>Managed cross-functional Agile teams of 12 (Web, Mobile, QA, BA).</li>
+                                <li>Drastically improved system performance and maintenance cycles.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Timeline Item -->
+                        <div class="relative pl-6">
+                            <div class="absolute -left-1.5 top-1.5 w-3 h-3 bg-gray-600 rounded-full border-2 border-[#1a1d27]"></div>
+                            <div class="flex justify-between items-baseline mb-1">
+                                <h3 class="font-bold text-gray-200 text-lg">Tech Lead & Consultant <span class="text-gray-500 text-sm font-normal">| Multiple</span></h3>
+                                <span class="text-xs font-mono text-gray-500">2009 - 2015</span>
+                            </div>
+                            <p class="text-sm text-gray-400 mb-2">Sympon, NetSolutions, JST Technologies.</p>
+                            <ul class="list-disc list-inside text-sm text-gray-300 space-y-1.5 marker:text-gray-600">
+                                <li>Maintained CMMi Level 3 standards for project architecture.</li>
+                                <li>Built internal HR portals and task schedulers.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Timeline Item -->
+                        <div class="relative pl-6">
+                            <div class="absolute -left-1.5 top-1.5 w-3 h-3 bg-gray-600 rounded-full border-2 border-[#1a1d27]"></div>
+                            <div class="flex justify-between items-baseline mb-1">
+                                <h3 class="font-bold text-gray-300 text-lg">Core PHP Developer <span class="text-gray-500 text-sm font-normal">| Kayako</span></h3>
+                                <span class="text-xs font-mono text-gray-500">2008 - 2009</span>
+                            </div>
+                            <p class="text-sm text-gray-400">Core team for "Fusion" (30k+ global licenses) & Custom CMS development.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Column: Skills & Projects -->
+            <section class="space-y-6">
+                
+                <!-- Commit Breakdown -->
+                <div>
+                    <h2 class="text-xl font-bold border-b border-gray-800 pb-2 mb-4">Commit Profile <span class="text-xs font-normal text-gray-500 ml-2">(Last 4 Years)</span></h2>
+                    <div class="card p-5 space-y-4">
+                        <!-- Skill Bar -->
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold uppercase text-gray-400 mb-1.5">
+                                <span>DevOps & Infra</span>
+                                <span class="font-mono text-brand-400">115 Commits</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-1.5"><div class="bg-brand-400 h-1.5 rounded-full" style="width: 100%"></div></div>
+                            <p class="text-[11px] text-gray-500 mt-1">Docker, GitHub Actions, Heroku, GCP Cloud Run</p>
+                        </div>
+                        <!-- Skill Bar -->
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold uppercase text-gray-400 mb-1.5">
+                                <span>Backend / Laravel</span>
+                                <span class="font-mono text-gray-300">84 Commits</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-1.5"><div class="bg-gray-400 h-1.5 rounded-full" style="width: 73%"></div></div>
+                            <p class="text-[11px] text-gray-500 mt-1">APIs, Postgres, Migrations, Socialite, Queues</p>
+                        </div>
+                        <!-- Skill Bar -->
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold uppercase text-gray-400 mb-1.5">
+                                <span>Reliability</span>
+                                <span class="font-mono text-gray-300">80 Commits</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-1.5"><div class="bg-gray-500 h-1.5 rounded-full" style="width: 69%"></div></div>
+                            <p class="text-[11px] text-gray-500 mt-1">Pest, PHPUnit, Pint, Sentry, Telescope</p>
+                        </div>
+                        <!-- Skill Bar -->
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold uppercase text-gray-400 mb-1.5">
+                                <span>Frontend</span>
+                                <span class="font-mono text-gray-300">68 Commits</span>
+                            </div>
+                            <div class="w-full bg-gray-800 rounded-full h-1.5"><div class="bg-gray-600 h-1.5 rounded-full" style="width: 59%"></div></div>
+                            <p class="text-[11px] text-gray-500 mt-1">Alpine.js, Tailwind, Vue, Blade UI</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Ecosystems -->
+                <div>
+                    <h2 class="text-xl font-bold border-b border-gray-800 pb-2 mb-4">Core Ecosystems</h2>
+                    <div class="space-y-3">
+                        <div class="card p-4 hover:border-brand-400/50 transition-colors">
+                            <h4 class="font-bold text-sm text-white mb-1">Altron & Boilerplates</h4>
+                            <p class="text-xs text-gray-400 leading-relaxed">Central dashboard ecosystems and 1-click Laravel/Next.js starters integrated with AI support and telemetry.</p>
+                        </div>
+                        <div class="card p-4 hover:border-brand-400/50 transition-colors">
+                            <h4 class="font-bold text-sm text-white mb-1">Secure Online Compiler</h4>
+                            <p class="text-xs text-gray-400 leading-relaxed">Isolated Docker `/tmp` execution engine safely compiling C, PHP, Python, and Bash on the fly.</p>
+                        </div>
+                        <div class="card p-4 hover:border-brand-400/50 transition-colors">
+                            <h4 class="font-bold text-sm text-white mb-1">Watcher & Scheduler</h4>
+                            <p class="text-xs text-gray-400 leading-relaxed">Custom URL uptime engine with tailored Slack alerts, alongside an optimized calendar availability application.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </div>
+</body>
+</html>

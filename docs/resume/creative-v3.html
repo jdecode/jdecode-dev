@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jagdeep Singh Kalsi | Architecture & Engineering</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            900: '#020617', // Slate 950
+                            800: '#0f172a', // Slate 900
+                            700: '#1e293b', // Slate 800
+                            accent: '#38bdf8', // Sky 400
+                            secondary: '#818cf8' // Indigo 400
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Outfit"', 'system-ui', 'sans-serif'],
+                        mono: ['"Fira Code"', 'monospace'],
+                        serif: ['"Playfair Display"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Fira+Code:wght@400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #020617;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+        
+        /* Grid Background Pattern */
+        .bg-grid {
+            background-image: 
+                linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: center center;
+        }
+
+        /* Glassmorphism Classes */
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(56, 189, 248, 0.15);
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+
+        /* Typography Gradients */
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(90deg, #38bdf8, #818cf8);
+        }
+
+        /* Timeline specific */
+        .timeline-dot {
+            width: 16px;
+            height: 16px;
+            background: #020617;
+            border: 3px solid #38bdf8;
+            border-radius: 50%;
+            position: absolute;
+            left: -8px;
+            top: 24px;
+            z-index: 10;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #38bdf8, rgba(56,189,248,0.1));
+        }
+
+        /* Sticky Section behavior */
+        .sticky-section {
+            position: sticky;
+            top: 2rem;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #020617;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-brand-accent selection:text-white">
+
+<!-- Fixed Background Elements -->
+<div class="fixed inset-0 z-[-1] bg-grid opacity-50"></div>
+<div class="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-brand-accent opacity-[0.03] blur-[120px] z-[-1]"></div>
+<div class="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-brand-secondary opacity-[0.03] blur-[120px] z-[-1]"></div>
+
+<div class="max-w-[1440px] mx-auto px-6 md:px-12 py-12 md:py-24">
+
+    <!-- Hero Immersive Section -->
+    <header class="min-h-[80vh] flex flex-col justify-center relative mb-24">
+        <div class="inline-block mb-6">
+            <span class="font-mono text-brand-accent tracking-widest uppercase text-sm border border-brand-accent/30 rounded-full px-4 py-2 bg-brand-accent/5">
+                EST. 2008 // 20+ Years Engineering
+            </span>
+        </div>
+        
+        <h1 class="text-5xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-8">
+            Jagdeep Singh <br>
+            <span class="text-gradient">Kalsi</span>
+        </h1>
+        
+        <div class="max-w-3xl glass-panel p-8 rounded-2xl border-l-4 border-l-brand-accent">
+            <h2 class="text-2xl md:text-3xl font-serif italic text-slate-300 mb-6">Solution Architect & Platform Engineer</h2>
+            <p class="text-lg md:text-xl text-slate-400 leading-relaxed font-light">
+                Spearheading scalable SaaS architectures within the PHP/Laravel ecosystem. Over two decades of experience designing, building, and scaling enterprise systems—from legacy modernizations to cutting-edge Gen-AI (LLM) pipelines. Deeply committed to secure-by-design architectures and frictionless platform engineering.
+            </p>
+        </div>
+
+        <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 font-mono text-sm">
+            <div class="glass-card p-6 rounded-xl flex flex-col justify-center items-center text-center">
+                <span class="text-3xl font-bold text-white mb-2">7.3K+</span>
+                <span class="text-slate-400">Commits (2021-2026)</span>
+            </div>
+            <div class="glass-card p-6 rounded-xl flex flex-col justify-center items-center text-center">
+                <span class="text-3xl font-bold text-white mb-2">74</span>
+                <span class="text-slate-400">Repositories</span>
+            </div>
+            <div class="glass-card p-6 rounded-xl flex flex-col justify-center items-center text-center">
+                <span class="text-3xl font-bold text-white mb-2">20+</span>
+                <span class="text-slate-400">Years Experience</span>
+            </div>
+            <div class="glass-card p-6 rounded-xl flex flex-col justify-center items-center text-center">
+                <span class="text-3xl font-bold text-brand-accent mb-2">100%</span>
+                <span class="text-slate-400">Remote Native</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Deep Dive: Skills & Output -->
+    <section class="mb-32">
+        <div class="flex items-center gap-4 mb-12">
+            <div class="h-px bg-slate-800 flex-grow"></div>
+            <h2 class="text-3xl font-bold uppercase tracking-widest text-slate-300">Technical Arsenal</h2>
+            <div class="h-px bg-slate-800 flex-grow"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Data Column -->
+            <div class="col-span-1 glass-card p-8 rounded-2xl">
+                <h3 class="font-mono text-xl text-brand-accent mb-8">System Profile</h3>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="text-xs text-slate-500 uppercase tracking-widest mb-3">Architecture & Cloud</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded bg-slate-800 border border-slate-700 text-sm">GCP (Cloud Run, Build)</span>
+                            <span class="px-3 py-1 rounded bg-slate-800 border border-slate-700 text-sm">Laravel Cloud</span>
+                            <span class="px-3 py-1 rounded bg-slate-800 border border-slate-700 text-sm">Docker</span>
+                            <span class="px-3 py-1 rounded bg-slate-800 border border-slate-700 text-sm">Pub/Sub</span>
+                            <span class="px-3 py-1 rounded bg-slate-800 border border-slate-700 text-sm">Microservices</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-xs text-slate-500 uppercase tracking-widest mb-3">Backend Engineering</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded bg-slate-800 border border-slate-700 text-sm text-brand-accent">PHP 8.4</span>
+                            <span class="px-3 py-1 rounded bg-slate-800 border border-slate-700 text-sm text-brand-accent">Laravel 11/12</span>
+                            <span class="px-3 py-1 rounded bg-slate-800 border border-slate-700 text-sm">PostgreSQL / MySQL</span>
+                            <span class="px-3 py-1 rounded bg-slate-800 border border-slate-700 text-sm">Horizon Queues</span>
+                            <span class="px-3 py-1 rounded bg-slate-800 border border-slate-700 text-sm">Pest PHP</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-xs text-slate-500 uppercase tracking-widest mb-3">Frontend & AI</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded bg-slate-800 border border-slate-700 text-sm">Livewire 3 + Flux UI</span>
+                            <span class="px-3 py-1 rounded bg-slate-800 border border-slate-700 text-sm">Vue / Alpine.js</span>
+                            <span class="px-3 py-1 rounded bg-slate-800 border border-slate-700 text-sm">Tailwind CSS</span>
+                            <span class="px-3 py-1 rounded bg-slate-800 border border-slate-700 text-sm text-brand-secondary">Gemini 3 Pro</span>
+                            <span class="px-3 py-1 rounded bg-slate-800 border border-slate-700 text-sm text-brand-secondary">Prism</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Column -->
+            <div class="col-span-1 lg:col-span-2 glass-card p-8 rounded-2xl flex flex-col justify-between">
+                <div>
+                    <h3 class="font-mono text-xl text-brand-secondary mb-8">Commit Classifications</h3>
+                    <p class="text-slate-400 mb-8 leading-relaxed max-w-2xl">
+                        Empirical data reconstructed from the full git history (2021-2026). Over 4,800 commits classified out of 7,326 total, showcasing a deeply balanced full-stack footprint with massive emphasis on reliability and automated delivery.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="relative">
+                            <div class="flex justify-between text-sm mb-2 font-mono">
+                                <span>Reliability / Bug Fixing (Testing, Regression)</span>
+                                <span>21.3% — 1,382 Commits</span>
+                            </div>
+                            <div class="h-2 w-full bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-brand-accent w-[21.3%]"></div>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <div class="flex justify-between text-sm mb-2 font-mono">
+                                <span>DevOps / Delivery (CI/CD, Docker)</span>
+                                <span>19.5% — 1,264 Commits</span>
+                            </div>
+                            <div class="h-2 w-full bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-brand-secondary w-[19.5%]"></div>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <div class="flex justify-between text-sm mb-2 font-mono">
+                                <span>Backend (APIs, Jobs, Models)</span>
+                                <span>15.3% — 995 Commits</span>
+                            </div>
+                            <div class="h-2 w-full bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-blue-500 w-[15.3%]"></div>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <div class="flex justify-between text-sm mb-2 font-mono">
+                                <span>Frontend (UI, Interactions)</span>
+                                <span>15.1% — 983 Commits</span>
+                            </div>
+                            <div class="h-2 w-full bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-purple-500 w-[15.1%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep Dive: Experience -->
+    <section class="mb-32 grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div class="lg:col-span-4">
+            <div class="sticky-section glass-panel p-8 rounded-2xl">
+                <h2 class="text-4xl font-black mb-4">The Journey</h2>
+                <p class="text-slate-400 leading-relaxed mb-6">
+                    A comprehensive timeline traversing over 20 years of software development. Evolving from a PHP Developer to a Solution Architect managing multi-team platform deployments.
+                </p>
+                <div class="font-mono text-xs text-brand-accent bg-brand-accent/10 px-4 py-3 rounded-lg border border-brand-accent/20">
+                    FOCUS: Scalability, Cloud Adoption, and Developer Experience (DX).
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:col-span-8 relative">
+            <div class="timeline-line"></div>
+            
+            <div class="space-y-16 pl-8">
+                <!-- Job 1 -->
+                <div class="relative glass-card p-8 rounded-2xl">
+                    <div class="timeline-dot"></div>
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-1">Solution Architect</h3>
+                            <h4 class="text-lg text-brand-accent">The Lightning Group</h4>
+                        </div>
+                        <div class="font-mono text-slate-500 mt-2 md:mt-0 bg-slate-900 px-3 py-1 rounded">2018 - Present</div>
+                    </div>
+                    
+                    <div class="space-y-4 text-slate-300">
+                        <p class="leading-relaxed">
+                            Spearheaded internal development programs and established platform engineering guidelines. Engineered highly customized Laravel/Next.js boilerplates enabling teams to deliver value instantly.
+                        </p>
+                        <ul class="list-disc pl-5 space-y-2 text-sm text-slate-400">
+                            <li><strong class="text-white">Cloud Infrastructure:</strong> Architected APIs on GCP Cloud Run. Leveraged Cloud Build for CI and Secret Manager for secure credentials. Handled Azure→GCP migrations.</li>
+                            <li><strong class="text-white">AI Leadership:</strong> Championed enterprise transition to AI-assisted dev (GitHub Copilot to Claude Code), multiplying dev velocity.</li>
+                            <li><strong class="text-white">API Automation:</strong> Integrated Postman CLI in Docker environments via CircleCI & GitHub Actions.</li>
+                            <li><strong class="text-white">Recognition:</strong> Awarded "Most Courageous Person" (Q1 2026) for acting as a voice of sanity during challenging periods.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="relative glass-card p-8 rounded-2xl">
+                    <div class="timeline-dot"></div>
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-1">Team Lead</h3>
+                            <h4 class="text-lg text-brand-secondary">Trantor Inc.</h4>
+                        </div>
+                        <div class="font-mono text-slate-500 mt-2 md:mt-0 bg-slate-900 px-3 py-1 rounded">2015 - 2017</div>
+                    </div>
+                    
+                    <div class="space-y-4 text-slate-300">
+                        <p class="leading-relaxed">
+                            Led the legacy modernization of a decade-old US code enforcement CRM application to a modern framework (Yii).
+                        </p>
+                        <ul class="list-disc pl-5 space-y-2 text-sm text-slate-400">
+                            <li>Managed a cross-functional Agile team of 12 (web/mobile devs, QA, BA).</li>
+                            <li>Continuously delivered new features while drastically improving system performance and maintainability.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 3 / Older -->
+                <div class="relative glass-card p-8 rounded-2xl">
+                    <div class="timeline-dot"></div>
+                    <h3 class="text-xl font-bold text-white mb-6">Earlier Career Leadership</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-white font-medium mb-1">Team Lead @ Sympon</h4>
+                            <div class="text-xs font-mono text-brand-accent mb-2">2013 - 2015</div>
+                            <p class="text-sm text-slate-400">Drove team deliverables and architecture in high-pace environments.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-medium mb-1">Consultant</h4>
+                            <div class="text-xs font-mono text-brand-accent mb-2">Feb 2013 - Jun 2013</div>
+                            <p class="text-sm text-slate-400">Advisory and implementation for multiple concurrent companies.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-medium mb-1">Tech Lead @ NetSolutions</h4>
+                            <div class="text-xs font-mono text-brand-accent mb-2">2011 - 2013</div>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-medium mb-1">Team Lead / Developer</h4>
+                            <div class="text-xs font-mono text-brand-accent mb-2">2008 - 2011</div>
+                            <p class="text-sm text-slate-400">JST Technologies & Kayako Infotech.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Master Projects & Builds -->
+    <section class="mb-32">
+        <div class="flex items-center gap-4 mb-12">
+            <h2 class="text-3xl font-bold uppercase tracking-widest text-slate-300">Flagship Projects & Architectures</h2>
+            <div class="h-px bg-slate-800 flex-grow"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Project 1 -->
+            <div class="glass-card p-8 rounded-2xl flex flex-col h-full border-t-4 border-t-brand-accent">
+                <div class="mb-6">
+                    <h3 class="text-2xl font-bold text-white mb-2">Master Product Enrichment Platform</h3>
+                    <p class="font-mono text-xs text-brand-accent">Sole Architect | Laravel 12 | 381 Commits | 25 PRs</p>
+                </div>
+                <p class="text-slate-300 text-sm leading-relaxed mb-6 flex-grow">
+                    Architected and built from scratch (first commit to production). Ingests EAN barcodes, fetches product data via Amazon SP-API/UPC Item DB, validates and categorizes it with Gemini 2.5 Flash / Pro via Prism ObjectSchemas, and exports marketplace-ready data.
+                </p>
+                <div class="bg-slate-900/50 p-4 rounded-lg border border-slate-800">
+                    <h4 class="text-white text-sm font-bold mb-2">Key Outcomes</h4>
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li>— Built queued SP-API client with LWA OAuth token exchange.</li>
+                        <li>— Delivered batched, parallel LLM validation jobs.</li>
+                        <li>— Multi-DB Laravel writing back to shared monolith database.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="glass-card p-8 rounded-2xl flex flex-col h-full border-t-4 border-t-brand-secondary">
+                <div class="mb-6">
+                    <h3 class="text-2xl font-bold text-white mb-2">Core Marketplace Monolith</h3>
+                    <p class="font-mono text-xs text-brand-secondary">Senior Platform Engineer | 391 Commits | 61 PRs</p>
+                </div>
+                <p class="text-slate-300 text-sm leading-relaxed mb-6 flex-grow">
+                    De-facto release owner on a ~9,000-commit multi-team Laravel 11 codebase processing live orders across 10+ marketplaces (Mirakl, Shopify, TikTok, Tesco). Owned the Azure to GCP cloud migration solo and introduced Cypress E2E into GitHub Actions.
+                </p>
+                <div class="bg-slate-900/50 p-4 rounded-lg border border-slate-800">
+                    <h4 class="text-white text-sm font-bold mb-2">Key Outcomes</h4>
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li>— Migrated web/worker/scheduler to Cloud Run & Compute Engine.</li>
+                        <li>— Built AI-powered field mapping & category matching (Gemini 3).</li>
+                        <li>— Extracted Inventory subsystem into standalone production GCP service.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- InfoSec & Personal Ecosystems -->
+    <section>
+        <div class="glass-panel p-12 rounded-3xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-4xl font-bold mb-6">Beyond the Codebase</h2>
+                <p class="text-lg text-slate-400 leading-relaxed mb-8">
+                    Engineering extends past commercial products. I am heavily invested in community building, open-source ecosystems, and information security.
+                </p>
+                
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="mt-1">
+                            <svg class="w-6 h-6 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-lg">InfoSec & Security Architectures</h4>
+                            <p class="text-sm text-slate-400 mt-1">Active contributor to the Chandigarh OWASP and NULL chapters. Conducted rigorous secure development training for the Central Tibet Administration (CTA).</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="mt-1">
+                            <svg class="w-6 h-6 text-brand-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-lg">Personal Platforms</h4>
+                            <p class="text-sm text-slate-400 mt-1">Actively building Altron (central SaaS dashboard), Diatrack (diet tracking for diabetes), Watcher (API uptime), Scheduler, and IndiaTalks.dev.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="relative h-full min-h-[300px] flex items-center justify-center">
+                <!-- Abstract visual element -->
+                <div class="absolute inset-0 bg-gradient-to-br from-brand-accent/20 to-brand-secondary/20 rounded-full blur-[100px]"></div>
+                <div class="relative glass-card p-8 rounded-2xl border border-white/10 text-center z-10 w-full max-w-sm">
+                    <div class="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white to-slate-500 mb-4">∞</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Continuous Learning</h3>
+                    <p class="text-sm text-slate-400">Pioneering AI-assisted workflows and driving modern engineering practices daily.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
